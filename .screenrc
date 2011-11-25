@@ -1,0 +1,12 @@
+defutf8 on                  # default encoding
+defflow on                  # mode of control window stream
+deflogin on                 # enable login mode
+vbell off                   # disable visual bell
+defmonitor on               # enable activity monitor
+activity "Activity on %n"   # activity message
+defscrollback 10000         # count of saved rows
+crlf off                    # use symbols CR — LF for differentiation between rows (for copy)
+startup_message off         # disable startup message
+
+# hard-status line
+hardstatus alwayslastline '%{= kW}%-w%{= kG}[%n %t]%{= kW}%+w%< %{= kW}%-=%d.%m.%Y %c:%s%{-}'
