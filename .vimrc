@@ -14,9 +14,9 @@ Bundle 'git://github.com/bkad/CamelCaseMotion'
 Bundle 'git://github.com/vim-scripts/Marks-Browser'
 Bundle 'git://github.com/vim-scripts/JavaScript-syntax'
 Bundle 'git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'git://github.com/MarcWeber/vim-addon-mw-utils.git'
-Bundle 'git://github.com/tomtom/tlib_vim.git'
-Bundle 'git://github.com/honza/snipmate-snippets.git'
+Bundle 'git://github.com/MarcWeber/vim-addon-mw-utils'
+Bundle 'git://github.com/tomtom/tlib_vim'
+Bundle 'git://github.com/honza/snipmate-snippets'
 Bundle 'git://github.com/garbas/vim-snipmate'
 Bundle 'git://github.com/tarmolov/TabLineNumbers.vim'
 
@@ -54,6 +54,7 @@ set tabstop=4
 set backspace=indent,eol,start      " allow to use backspace instead of "x"
 set fo+=cr                          " fix <Enter> for comment
 autocmd BufWritePre * :%s/\s\+$//e  " Delete spaces from end on lines
+set pastetoggle=<Leader>p           " Invert paste mod
 
 " View
 set ruler                           " show cursor position
@@ -116,9 +117,6 @@ map <leader>tm :tabmove
 
 " Marks browser
 map <leader>mb :MarksBrowser<cr>
-
-" Invert paste mod
-map <leader>ip :set invpaste<cr>
 
 " It's 2011. Don't skip wrap lines
 noremap j gj
