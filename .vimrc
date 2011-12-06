@@ -19,6 +19,7 @@ Bundle 'git://github.com/tomtom/tlib_vim'
 Bundle 'git://github.com/honza/snipmate-snippets'
 Bundle 'git://github.com/garbas/vim-snipmate'
 Bundle 'git://github.com/tarmolov/TabLineNumbers.vim'
+Bundle 'git://github.com/jistr/vim-nerdtree-tabs'
 
 let g:TabLineSet_windows = 0
 
