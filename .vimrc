@@ -56,6 +56,7 @@ set backspace=indent,eol,start      " allow to use backspace instead of "x"
 set fo+=cr                          " fix <Enter> for comment
 autocmd BufWritePre * :%s/\s\+$//e  " Delete spaces from end on lines
 set pastetoggle=<Leader>p           " Invert paste mod
+map <Leader>n <plug>NERDTreeTabsToggle<CR> " Toggle NerdTree
 
 " View
 set ruler                           " show cursor position
