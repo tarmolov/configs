@@ -7,9 +7,10 @@ call vundle#rc()
 " Bundles
 Bundle 'gmarik/vundle'
 Bundle 'git://github.com/scrooloose/nerdtree'
+Bundle 'git://github.com/jistr/vim-nerdtree-tabs'
 Bundle 'git://github.com/scrooloose/nerdcommenter'
 Bundle 'git://github.com/corntrace/bufexplorer'
-Bundle 'git://github.com/mhz/vim-matchit'
+Bundle 'git://github.com/vim-scripts/matchit.zip'
 Bundle 'git://github.com/bkad/CamelCaseMotion'
 Bundle 'git://github.com/vim-scripts/Marks-Browser'
 Bundle 'git://github.com/vim-scripts/JavaScript-syntax'
@@ -19,13 +20,14 @@ Bundle 'git://github.com/tomtom/tlib_vim'
 Bundle 'git://github.com/honza/snipmate-snippets'
 Bundle 'git://github.com/garbas/vim-snipmate'
 Bundle 'git://github.com/tarmolov/TabLineNumbers.vim'
-Bundle 'git://github.com/jistr/vim-nerdtree-tabs'
+Bundle 'git://github.com/vim-scripts/MediaWiki-folding-and-syntax-highlight'
 
 let g:TabLineSet_windows = 0
 
 " Common
 syntax on
-filetype plugin indent on
+filetype plugin on
+autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
 set langmenu=none                   " use english menu
 set hidden                          " don't unload buffer before switching
 set autoread                        " autoread changing of file
@@ -56,7 +58,6 @@ set backspace=indent,eol,start      " allow to use backspace instead of "x"
 set fo+=cr                          " fix <Enter> for comment
 autocmd BufWritePre * :%s/\s\+$//e  " Delete spaces from end on lines
 set pastetoggle=<Leader>p           " Invert paste mod
-map <Leader>n <plug>NERDTreeTabsToggle<CR> " Toggle NerdTree
 
 " View
 set ruler                           " show cursor position
