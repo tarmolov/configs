@@ -4,13 +4,17 @@ if [ -f ~/.bashrc ]; then
    . ~/.bashrc
 fi
 
+. ~/.configs/.git-completion.bash
+. ~/.configs/.git-flow-completion.bash
+
 export LESSCHARSET=utf-8
-export GREP_OPTIONS="-r --exclude-dir=.git --exclude-dir=.svn"
 export EDITOR=vim
-# export PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
+#export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+export PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
 
 # Aliases
-alias ls='ls -G'
+alias ls='ls --color=auto'
+alias grep='grep -r --exclude-dir=.git --exclude-dir=.svn'
 alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
 alias dch='dch --distributor debian'
