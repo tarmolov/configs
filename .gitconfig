@@ -1,0 +1,51 @@
+[user]
+    name = Alexander Tarmolov
+    email = hevil@yandex-team.ru
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = red
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    untracked = cyan
+[alias]
+    sbr = svn branch
+    srm = !sh -c 'git co $1 && svn rm $(git svn info --url) -m \"Delete branch $1\" && git co - && git br -r -d $1' -
+    spush = svn dcommit
+    spull = svn rebase
+
+    app = commit --amend -C HEAD
+    br = branch
+    ci = commit
+    co = checkout
+    di = diff -M -C -C --ignore-submodules
+    dic = diff -M -C -C --cached --ignore-submodules
+    lg = log -M -C -C --name-status
+    sh = show -M -C -C
+    st = status -s
+    cp = cherry-pick
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+
+    stand = !"git-stand"
+[svn]
+    rmdir = true
+[core]
+    safecrlf = true
+[push]
+    default = tracking
+[gc]
+    auto = 0
+[branch]
+    autosetuprebase = always
+[merge]
+    tool = vimdiff

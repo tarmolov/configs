@@ -9,8 +9,7 @@ fi
 
 export LESSCHARSET=utf-8
 export EDITOR=vim
-#export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
-export PS1='[\u@\h \w$(__git_ps1 " (%s)")]\$ '
+export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__git_ps1 " (%s)") \$\[\e[m\] \[\e[1;37m\]'
 
 # Aliases
 alias ls='ls --color=auto'
