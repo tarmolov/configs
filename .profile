@@ -27,11 +27,6 @@ sdiff() {
     svn diff --no-diff-deleted $@ | colordiff | less -SR
 }
 
-# For debuild
-export DEBFULLNAME="Alexander Tarmolov"
-export DEBEMAIL=hevil@yandex-team.ru
-export EMAIL=hevil@yandex-team.ru
-
 # Use local bin before
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d ~/bin ] ; then
