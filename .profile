@@ -1,6 +1,6 @@
 #!bash
 
-if [ -f ~/.bashrc ]; then
+if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
    . ~/.bashrc
 fi
 
