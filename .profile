@@ -12,6 +12,7 @@ export EDITOR=vim
 export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__git_ps1 " (%s)") \$\[\e[m\] \[\e[1;37m\]'
 
 # Aliases
+alias screen='screen -T linux -s /bin/bash'
 alias ls='ls --color=auto'
 alias grep='grep -r --exclude-dir=.git --exclude-dir=.svn'
 alias surl='svn info | grep URL'
@@ -32,3 +33,5 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
+
+. ~/.configs/autoscreen.bash
