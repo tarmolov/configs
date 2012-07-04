@@ -8,6 +8,8 @@
 ln -sf .configs/.screenrc ~
 ln -sf .configs/.vim ~
 ln -sf .configs/.vimrc ~
+git submodule init
+git submodule update
 vim -c ":BundleInstall" -c ":qa"
 
 # generate .profile if name and e-mail are set
