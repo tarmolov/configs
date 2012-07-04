@@ -4,6 +4,7 @@
 # TODO: --ignore submodules for git-status (git 1.7.2)
 # TODO: Include for gitcongig (git 1.7.10)
 # TODO: Write doc
+# TODO: Disable autoupdate, if git isn't installed
 
 # show program usage
 show_usage() {
