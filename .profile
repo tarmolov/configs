@@ -36,12 +36,13 @@ fi
 
 . ~/.configs/autoscreen.bash
 
+# Autoupdate configs
 if [ $TERM = 'dumb' ]; then
     sleep 0
 else
     FILE=~/.configs/.needupdate
 
-    if ! [ -f $FILE ] || test `find $FILE -mmin +1`;
+    if ! [ -f $FILE ] || test `find $FILE -mmin +540`;
     then
         echo "== Updating configs"
         cd ~/.configs; git pull origin master
