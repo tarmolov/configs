@@ -23,6 +23,7 @@ Bundle 'git://github.com/tarmolov/TabLineNumbers.vim'
 Bundle 'git://github.com/vim-scripts/MediaWiki-folding-and-syntax-highlight'
 
 let g:TabLineSet_windows = 0
+let NERDTreeShowHidden = 1
 
 " Common
 syntax on
