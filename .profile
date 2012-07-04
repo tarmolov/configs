@@ -35,3 +35,16 @@ if [ -d ~/bin ] ; then
 fi
 
 . ~/.configs/autoscreen.bash
+
+if [ $TERM = 'dumb' ]; then
+    sleep 0
+else
+    FILE=~/.configs/.needupdate
+
+    if ! [ -f $FILE ] || test `find $FILE -mmin +1`;
+    then
+        echo "== Updating configs"
+        cd ~/.configs; git pull origin master
+        touch $FILE
+    fi
+fi

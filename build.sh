@@ -60,6 +60,7 @@ done
 
 git submodule init
 git submodule update
+sleep 1
 vim -c ":BundleInstall" -c ":qa"
 
 # generate .profile if name and e-mail are set
