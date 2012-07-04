@@ -13,7 +13,7 @@ vim -c ":BundleInstall" -c ":qa"
 # generate .profile if name and e-mail are set
 if [ -n "$1" ] &&  [ -n "$2" ]; then
     rm -rf ~/.profile
-    echo -e "export DEBFULLNAME=\"$1\"\nexport DEBEMAIL=$2\nexport EMAIL=$2\n. ~/.configs/.profile" > ~/.profile
+    echo "export DEBFULLNAME=\"$1\"\nexport DEBEMAIL=$2\nexport EMAIL=$2\n. ~/.configs/.profile" > ~/.profile
 else
     ln -sf .configs/.profile ~
 fi
