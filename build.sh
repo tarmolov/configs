@@ -30,9 +30,9 @@ for OPT in "$@" ; do
                     read -p "Do you want to delete .bashrc, .profile, .gitconfig, .screenrc, .vimrc and .vim? (y/n)? "
                     [ "$REPLY" != "y" ] ||
                         for file in .bashrc .profile .gitconfig .screenrc .vimrc .vim
-                            do
-                                rm -rf ~/$file
-                            done
+                        do
+                            rm -rf ~/$file
+                        done
                     exit;;
                 --name=*)
                     NAME=${OPT##*=}
@@ -53,10 +53,11 @@ for OPT in "$@" ; do
     esac
 done
 
-ln -sf .configs/.screenrc ~
-ln -sf .configs/.gitconfig ~
-ln -sf .configs/.vim ~
-ln -sf .configs/.vimrc ~
+for file in .screenrc .gitconfig .vim .vimrc
+do
+    ln -sf ~/$file
+done
+
 git submodule init
 git submodule update
 vim -c ":BundleInstall" -c ":qa"
