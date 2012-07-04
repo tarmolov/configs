@@ -55,7 +55,7 @@ done
 
 for file in .screenrc .gitconfig .vim .vimrc
 do
-    ln -sf ~/$file
+    ln -sf ~/.configs/$file ~/$file
 done
 
 git submodule init
@@ -66,7 +66,10 @@ vim -c ":BundleInstall" -c ":qa"
 # generate .profile if name and e-mail are set
 if [ -n "$NAME" ] &&  [ -n "$EMAIL" ]; then
     rm -rf ~/.profile
-    echo "export DEBFULLNAME=\"$NAME\"\nexport DEBEMAIL=$EMAIL\nexport EMAIL=$EMAIL\n. ~/.configs/.profile" > ~/.profile
+    echo "export DEBFULLNAME=\"$NAME\"" > ~/.profile
+    echo "export DEBEMAIL=$EMAIL" >> ~/.profile
+    echo "export EMAIL=$EMAIL" >> ~/.profile
+    echo ". ~/.configs/.profile" >> ~/.profile
 else
     ln -sf .configs/.profile ~
 fi
