@@ -54,6 +54,7 @@ for OPT in "$@" ; do
 done
 
 ln -sf .configs/.screenrc ~
+ln -sf .configs/.gitconfig ~
 ln -sf .configs/.vim ~
 ln -sf .configs/.vimrc ~
 git submodule init
