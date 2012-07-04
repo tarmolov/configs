@@ -7,6 +7,12 @@ activity "Activity on %n"   # activity message
 defscrollback 10000         # count of saved rows
 crlf off                    # use symbols CR — LF for differentiation between rows (for copy)
 startup_message off         # disable startup message
+autodetach on
+shell -$SHELL               # always use a login shell
+
+# auto-log
+logfile $HOME/.screen-logs/%Y%m%d-%n.log
+deflog on
 
 # hard-status line
 hardstatus alwayslastline '%{= kW}%-w%{= kG}[%n %t]%{= kW}%+w%< %{= kW}%-=%d.%m.%Y %c:%s%{-}'
