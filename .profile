@@ -13,7 +13,7 @@ export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__git_
 
 # Aliases
 alias screen='screen -T linux -s /bin/bash'
-alias ls='ls --color=auto'
+alias ls='ls -FG'
 alias grep='grep -r --exclude-dir=.git --exclude-dir=.svn'
 alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
@@ -35,3 +35,19 @@ if [ -d ~/bin ] ; then
 fi
 
 . ~/.configs/autoscreen.bash
+
+# Autoupdate configs
+if [ $TERM = 'dumb' ]; then
+    sleep 0
+else
+    FILE=~/.configs/.needupdate
+
+    if ! [ -f $FILE ] || test `find $FILE -mmin +540`;
+    then
+        if ping -q -W 1 -c 1 ya.ru > /dev/null; then
+            echo "== Updating configs"
+            cd ~/.configs; git pull origin master
+            touch $FILE
+        fi
+    fi
+fi
