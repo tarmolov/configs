@@ -3,8 +3,7 @@
 # Copyright 2012 Alexander Tarmolov <tarmolov@gmail.com>
 # TODO: --ignore submodules for git-status (git 1.7.2)
 # TODO: Include for gitcongig (git 1.7.10)
-# TODO: autoupdate config every day/week/month
-# TODO: notify if name and e-mail aren't set
+# TODO: Write doc
 
 # show program usage
 show_usage() {
