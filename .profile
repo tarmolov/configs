@@ -4,8 +4,8 @@ if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
    . ~/.bashrc
 fi
 
-. ~/.configs/.git-completion.bash
-. ~/.configs/.git-flow-completion.bash
+. ~/.configs/.bash/git-completion.bash
+. ~/.configs/.bash/git-flow-completion.bash
 
 export LESSCHARSET=utf-8
 export EDITOR=vim
@@ -34,8 +34,8 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-. ~/.configs/autoscreen.bash
+. ~/.configs/.bash/autoscreen.bash
 
 if git --version 2>&1 >/dev/null; then
-    . ~/.configs/autoupdate.bash
+    . ~/.configs/.bash/autoupdate.bash
 fi
