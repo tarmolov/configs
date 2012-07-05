@@ -51,7 +51,7 @@ for OPT in "$@" ; do
     esac
 done
 
-for file in .screenrc .gitconfig .vim .vimrc
+for file in .screenrc .vim .vimrc
 do
     ln -sf ~/.configs/$file ~/$file
 done
@@ -68,6 +68,7 @@ if [ -n "$NAME" ] &&  [ -n "$EMAIL" ]; then
     echo "export DEBEMAIL=$EMAIL" >> ~/.profile
     echo "export EMAIL=$EMAIL" >> ~/.profile
     echo ". ~/.configs/.profile" >> ~/.profile
+    cat ~/.configs/.gitconfig | sed -e "s/@USER_NAME@/$NAME/g; s/@USER_EMAIL@/$EMAIL/g" > ~/.gitconfig
 else
     ln -sf .configs/.profile ~
 fi

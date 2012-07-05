@@ -1,6 +1,6 @@
 [user]
-    name = Alexander Tarmolov
-    email = hevil@yandex-team.ru
+    name = @USER_NAME@
+    email = @USER_EMAIL@
 [color]
     diff = auto
     status = auto
