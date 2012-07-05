@@ -13,7 +13,7 @@ Features
   * Vim config based on bundles
   * Autoupdate configs every 8 hours (it happens only after enter to terminal)
 
-How to install configs
+Install
 =========================
 Clone my repository with configs and execute build.sh:
 
