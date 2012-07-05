@@ -25,4 +25,5 @@ Enjoy! :)
 Credits
 =========================
 Thx to [@aefimov](https://twitter.com/#!/aefimov_box) (idea of building configs)
+
 Thx to [@bessarabov](https://twitter.com/#!/bessarabov) (idea of autoupdate configs)
