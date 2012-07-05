@@ -2,9 +2,7 @@
 # Config builder
 # Copyright 2012 Alexander Tarmolov <tarmolov@gmail.com>
 # TODO: --ignore submodules for git-status (git 1.7.2)
-# TODO: Include for gitcongig (git 1.7.10)
-# TODO: Write doc
-# TODO: Disable autoupdate, if git isn't installed
+# TODO: Include for gitconfig (git 1.7.10)
 
 # show program usage
 show_usage() {
