@@ -1,6 +1,6 @@
 Overview
 =========================
-There is my set of configs for bash, vim, screen and etc. Idea of building configs belongs [@aefimov](https://twitter.com/#!/aefimov_box).
+There is my set of configs for bash, vim, screen and etc.
 
 Features
 =========================
@@ -21,3 +21,8 @@ Clone my repository with configs and execute build.sh:
     ~/.configs./build.sh --name='YOUR NAME' --email=EMAIL
 
 Enjoy! :)
+
+Credits
+=========================
+Thx to [@aefimov](https://twitter.com/#!/aefimov_box) (idea of building configs)
+Thx to [@bessarabov](https://twitter.com/#!/bessarabov) (idea of autoupdate configs)
