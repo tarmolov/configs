@@ -13,12 +13,6 @@ export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__git_
 
 # Aliases
 alias screen='screen -T linux -s /bin/bash'
-
-if ls --color=auto > /dev/null then
-    alias ls='ls -color=auto'
-else
-    alias ls='ls -FG'
-fi
 alias grep='grep -r --exclude-dir=.git --exclude-dir=.svn'
 alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
@@ -32,6 +26,19 @@ alias vim='vim -p'
 sdiff() {
     svn diff --no-diff-deleted $@ | colordiff | less -SR
 }
+
+# Set appropriate ls alias
+case $(uname -s) in
+    Darwin|FreeBSD)
+            alias ls="ls -hFG"
+    ;;
+    Linux)
+            alias ls="ls --color=always -hF"
+    ;;
+    NetBSD|OpenBSD)
+            alias ls="ls -hF"
+    ;;
+esac
 
 # Use local bin before
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
