@@ -5,7 +5,9 @@ There is my set of configs for bash, vim, screen and etc.
 Features
 =========================
   * Tuned *PS1* (command promt) looks like
+
     <user>@<host> <working directory> (git branch) $
+
   * Config for screen
   * Automatic Screen for SSH Login
   * Git completion
