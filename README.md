@@ -1,6 +1,6 @@
 Overview
 =========================
-There is my set of configs for bash, vim, screen and etc. Idea of building configs and some others belong [@aefimov](https://twitter.com/#!/aefimov_box).
+There is my set of configs for bash, vim, screen and etc. Idea of building configs belongs [@aefimov](https://twitter.com/#!/aefimov_box).
 
 Features
 =========================
