@@ -113,6 +113,9 @@ map <silent> e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 
+" gf opens file in new tab
+map <silent> gf <C-W>gf<cr>
+
 " Tab configuration
 map <leader>tn :tabnew<cr>
 map <leader>te :tabedit
