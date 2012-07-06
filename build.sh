@@ -40,9 +40,6 @@ for OPT in "$@" ; do
                     EMAIL=${OPT##*=}
                     echo $EMAIL
                     shift ;;
-                --yandexemail=*)
-                    YANDEX_EMAIL=${OPT##*=}
-                    shift ;;
                 -*)
                     echo "Illegal option"
                 ;;
