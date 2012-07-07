@@ -12,6 +12,7 @@ Features
   * Git config with a lot of nice shortcuts
   * Vim config based on bundles
   * Autoupdate configs every 8 hours (it happens only after enter to terminal)
+  * Works fine on unix and osx
 
 Install
 =========================
