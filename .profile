@@ -13,7 +13,7 @@ export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__git_
 
 # Aliases
 alias screen='screen -T linux -s /bin/bash'
-alias grep='grep -r --exclude-dir=.git --exclude-dir=.svn'
+alias grep='grep -r --exclude=.git --exclude=\*.svn\*'
 alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
 alias dch='dch --distributor debian'
