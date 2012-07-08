@@ -10,6 +10,7 @@ else
             echo "== Updating configs"
             cd ~/.configs; git pull origin master
             touch $FILE
+            cd -
         fi
     fi
 fi
