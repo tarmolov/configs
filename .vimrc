@@ -114,7 +114,7 @@ sunmap w
 sunmap b
 
 " gf opens file in new tab
-map <silent> gf <C-W>gf<cr>
+map <silent> gf <C-W>gf:tabm 999<cr>
 
 " Tab configuration
 map <leader>tn :tabnew<cr>
