@@ -53,10 +53,12 @@ do
     ln -sf ~/.configs/$file ~/$file
 done
 
+cd ~/.configs
 git submodule init
 git submodule update
 sleep 1
 vim -c ":BundleInstall" -c ":qa"
+cd -
 
 # generate .profile if name and e-mail are set
 if [ -n "$NAME" ] &&  [ -n "$EMAIL" ]; then
