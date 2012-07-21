@@ -21,11 +21,32 @@ alias debrelease='if [ -e dupload.conf ]; then debrelease -c --nomail; else debr
 alias make='make -B'
 alias less='less -R'
 alias ducks="du -cks * | sort -rn | head -n11"
-alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 alias vim='vim -p'
 sdiff() {
     svn diff --no-diff-deleted $@ | colordiff | less -SR
 }
+
+# git aliases (based on TJ Holowaychuk's aliases)
+alias gd="git di"
+alias gdc="git dic"
+alias ga="git add"
+alias gbd="git branch -D"
+alias gst="git status"
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gm="git merge --no-ff"
+alias gpt="git push --tags"
+alias gp="git push"
+alias grh="git reset --hard"
+alias gb="git branch"
+alias gcob="git checkout -b"
+alias gco="git checkout"
+alias gba="git branch -a"
+alias gcp="git cherry-pick"
+alias glg="git lg"
+alias gh="git hist"
+alias gpom="git pull origin master"
+alias gcd='cd "`git rev-parse --show-toplevel`"'
 
 # Set appropriate ls alias
 case $(uname -s) in
