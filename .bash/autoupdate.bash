@@ -8,7 +8,7 @@ else
     then
         if ping -q -W 1 -c 1 ya.ru > /dev/null; then
             echo "== Updating configs"
-            cd ~/.configs; git pull origin master
+            cd ~/.configs; git pull
             touch $FILE
             cd -
         fi
