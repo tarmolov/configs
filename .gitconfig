@@ -23,6 +23,12 @@
     spush = svn dcommit
     spull = svn rebase
 
+    effort = !"~/.configs/.git-extras/bin/git-effort"
+    ignore = !"~/.configs/.git-extras/bin/git-ignore"
+    info = !"~/.configs/.git-extras/bin/git-info | less"
+    summary = !"~/.configs/.git-extras/bin/git-summary"
+    undo = !"~/.configs/.git-extras/bin/git-undo"
+
     app = commit --amend -C HEAD
     br = branch
     ci = commit
