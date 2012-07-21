@@ -9,6 +9,7 @@ else
         if ping -q -W 1 -c 1 ya.ru > /dev/null; then
             echo "== Updating configs"
             cd ~/.configs; git pull
+            git submodule update
             touch $FILE
             cd -
         fi
