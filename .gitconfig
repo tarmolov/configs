@@ -37,7 +37,7 @@
     dic = diff -M -C -C --cached --ignore-submodules
     lg = log -M -C -C --name-status
     sh = show -M -C -C
-    st = status -s
+    st = status -s --ignore-submodules
     cp = cherry-pick
     hist = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph --date=short
     lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
