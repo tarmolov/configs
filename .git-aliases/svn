@@ -1,0 +1,5 @@
+[alias]
+    sbr = svn branch
+    srm = !sh -c 'git co $1 && svn rm $(git svn info --url) -m \"Delete branch $1\" && git co - && git br -r -d $1' -
+    spush = svn dcommit
+    spull = svn rebase
