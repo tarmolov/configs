@@ -9,6 +9,7 @@ Features
   * Automatic Screen for SSH Login
   * Git completion
   * Git flow completion
+  * Git extra commands
   * Git config with a lot of nice shortcuts
   * Vim config based on bundles
   * Autoupdate configs every 8 hours (it happens only after enter to terminal)
