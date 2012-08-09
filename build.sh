@@ -81,6 +81,10 @@ echo ". ~/.configs/.profile" >> ~/.profile
 echo "[include]" >> ~/.gitconfig
 echo "  path = .configs/.gitconfig" >> ~/.gitconfig
 
+echo "Add useful commands"
+mkdir -p ~/bin
+ln -sf ~/.configs/.bin/diffconflicts ~/bin
+
 # screen doesn't read .profile
 ln -sf ~/.profile ~/.bashrc
 
