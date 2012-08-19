@@ -38,6 +38,7 @@ set undolevels=1000                 " max count of undo commands
 set nobackup                        " don't make backup
 set noswapfile                      " and swap
 set nowb
+set confirm                         " provide confirm when you have unsaved changes
 
 " Encoding
 set encoding=utf8
