@@ -52,6 +52,7 @@ let mapleader = ","                 " remap <Leader> key
 set completeopt=longest,menuone     " autocompletion
 set autoindent                      " inherit indent from previous line
 "set smartindent
+set formatoptions-=o                "dont continue comments when pushing o/O
 set expandtab                       " convert tab to spaces
 set shiftwidth=4                    " size of tab char in spaces
 set softtabstop=4
@@ -90,7 +91,7 @@ highlight lCursor guifg=NONE guibg=Cyan
 set background=dark
 
 " Folding
-set foldlevel=5
+set foldlevelstart=99               "remove folds
 set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 
 " Search
@@ -127,6 +128,12 @@ map <leader>tm :tabmove
 
 " Marks browser
 map <leader>mb :MarksBrowser<cr>
+
+" Split navigation using arrows
+nnoremap <Right> <C-w>l
+nnoremap <Left> <C-w>h
+nnoremap <Up> <C-w>k
+nnoremap <Down> <C-w>j
 
 " It's 2011. Don't skip wrap lines
 noremap j gj
