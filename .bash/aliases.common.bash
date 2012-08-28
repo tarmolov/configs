@@ -1,5 +1,5 @@
 alias screen='screen -T linux -s /bin/bash'
-alias grep='grep -r --exclude=.git --exclude=\*.svn\*'
+alias rgrep='grep -r --exclude=.git --exclude=\*.svn\*'
 alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
 alias dch='dch --distributor debian'
