@@ -18,4 +18,4 @@ alias gcp="git cherry-pick"
 alias glg="git lg"
 alias gh="git hist"
 alias gpom="git pull origin master"
-alias gcd='cd "`git rev-parse --show-toplevel`"'
+alias gr='cd "`git rev-parse --show-toplevel`"'
