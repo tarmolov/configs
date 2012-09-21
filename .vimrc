@@ -87,11 +87,10 @@ set statusline=%<%F\ %2*%y%m%r\
             \%3*-%{&fileencoding}-
 
 " View
-highlight lCursor guifg=NONE guibg=Cyan
+set background=dark
+set colorcolumn=80                  " 80 chars mode
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
-set background=dark
-set colorcolumn=80
 
 " Folding
 set foldlevelstart=99               "remove folds
