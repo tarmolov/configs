@@ -88,9 +88,9 @@ set statusline=%<%F\ %2*%y%m%r\
 
 " View
 set background=dark
-set colorcolumn=80                  " 80 chars mode
+set colorcolumn=100                 " 80 chars mode
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%101v.\+/
 
 " Folding
 set foldlevelstart=99               "remove folds
