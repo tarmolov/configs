@@ -4,7 +4,6 @@ alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
 alias dch='dch --distributor debian'
 alias debrelease='if [ -e dupload.conf ]; then debrelease -c --nomail; else debrelease --nomail; fi'
-alias make='make -B'
 alias less='less -R'
 alias ducks="du -cks * | sort -rn | head -n11"
 alias vim='vim -p'
