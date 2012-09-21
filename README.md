@@ -2,6 +2,12 @@ Overview
 =========================
 There is my set of configs for bash, vim, screen and etc.
 
+Prerequisites
+=========================
+  * git (>=1.7.10)
+  * vim (>=7.3)
+  * screen
+
 Features
 =========================
   * Tuned `PS1` (command promt) looks like `<user>@<host> <working directory> (git branch) $`
@@ -19,8 +25,8 @@ Install
 =========================
 Clone my repository with configs and execute build.sh:
 
-    git clone git@github.com:tarmolov/configs.git ~/.configs
-    ~/.configs./build.sh --name='YOUR NAME' --email=EMAIL
+    git clone git://github.com/tarmolov/configs.git ~/.configs
+    ~/.configs/./build.sh --name='YOUR NAME' --email=EMAIL
 
 Enjoy! :)
 
