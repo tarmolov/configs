@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
+
 Bundle 'gmarik/vundle'
 Bundle 'git://github.com/scrooloose/nerdtree'
 Bundle 'git://github.com/jistr/vim-nerdtree-tabs'
@@ -27,6 +28,7 @@ let NERDTreeShowHidden = 1
 
 " Common
 syntax on
+
 filetype plugin on
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
 set langmenu=none                   " use english menu
@@ -64,6 +66,11 @@ autocmd FocusLost * silent! wh      " Auto save files when focus is lost
 autocmd BufLeave * silent! :w       "   or leave buffer
 set pastetoggle=<Leader>p           " Invert paste mod
 
+setglobal relativenumber
+autocmd BufEnter * set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
 " View
 set ruler                           " show cursor position
 set mousehide                       " hide mouser corse in typing
@@ -71,6 +78,11 @@ set cursorline                      " highlight current position of cursor
 set number                          " enable row numeration
 let &sbr = nr2char(8618).' '        " show ↪ at the beginning of wrapped lines
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
+set background=dark
+highlight OverLengthLongLongStrings ctermbg=red ctermfg=white guibg=#592929
+match OverLengthLongLongStrings /\%101v.\+/
+
+
 
 " Command line
 set wildmenu                        " show autocompleate words
@@ -85,12 +97,6 @@ set statusline=%<%F\ %2*%y%m%r\
             \ %=\
             \%0*[#%2*%n%0*]\
             \%3*-%{&fileencoding}-
-
-" View
-set background=dark
-set colorcolumn=100                 " 80 chars mode
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%101v.\+/
 
 " Folding
 set foldlevelstart=99               "remove folds
