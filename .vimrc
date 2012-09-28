@@ -67,11 +67,6 @@ autocmd FocusLost * silent! wh      " Auto save files when focus is lost
 autocmd BufLeave * silent! :w       "   or leave buffer
 set pastetoggle=<Leader>p           " Invert paste mod
 
-setglobal relativenumber
-autocmd BufEnter * set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
 " View
 set ruler                           " show cursor position
 set mousehide                       " hide mouser corse in typing
