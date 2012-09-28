@@ -22,6 +22,7 @@ Bundle 'git://github.com/honza/snipmate-snippets'
 Bundle 'git://github.com/garbas/vim-snipmate'
 Bundle 'git://github.com/tarmolov/TabLineNumbers.vim'
 Bundle 'git://github.com/vim-scripts/MediaWiki-folding-and-syntax-highlight'
+Bundle 'git://github.com/mileszs/ack.vim.git'
 
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
