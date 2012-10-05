@@ -5,7 +5,7 @@
     co = checkout
     di = diff -M -C -C --ignore-submodules
     dic = diff -M -C -C --cached --ignore-submodules
-    lg = log -M -C -C --name-status
+    lg = log -M -C -C --name-status --decorate
     lgs = log -M -C -C --stat
     sh = show -M -C -C
     st = status -s --ignore-submodules
