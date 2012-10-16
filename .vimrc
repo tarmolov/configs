@@ -63,6 +63,7 @@ set tabstop=4
 set backspace=indent,eol,start      " allow to use backspace instead of "x"
 set fo+=cr                          " fix <Enter> for comment
 autocmd BufWritePre * :%s/\s\+$//e  " Delete spaces from end on lines
+autocmd BufWritePre * silent! :%s#\($\n\s*\)\+\%$## " Delete trailing lines at the end of file
 autocmd FocusLost * silent! wh      " Auto save files when focus is lost
 autocmd BufLeave * silent! :w       "   or leave buffer
 set pastetoggle=<Leader>p           " Invert paste mod
