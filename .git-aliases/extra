@@ -4,3 +4,4 @@
     info = !"~/.configs/.git-extras/bin/git-info | less"
     summary = !"~/.configs/.git-extras/bin/git-summary"
     undo = !"~/.configs/.git-extras/bin/git-undo"
+    vommit = !"~/.configs/.bin/git-vommit"
