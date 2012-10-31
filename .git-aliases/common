@@ -12,3 +12,6 @@
     cp = cherry-pick
     hist = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph --date=short
     lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+    in = !"git remote update -p &> /dev/null; git hist ..@{u}"
+    out = !"git hist @{u}.."
+    ppush = !"git sh @{u}.."
