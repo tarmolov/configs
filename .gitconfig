@@ -36,3 +36,5 @@
     cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
     trustExitCode = true
     keepBackup = false
+[advice]
+    statushints = false
