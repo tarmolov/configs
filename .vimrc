@@ -19,6 +19,7 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
+Bundle 'tarmolov/snipmate-snippets.vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'tarmolov/TabLineNumbers.vim'
 Bundle 'vim-scripts/MediaWiki-folding-and-syntax-highlight'
@@ -31,6 +32,7 @@ let NERDTreeShowHidden = 1
 syntax on
 
 filetype plugin on
+autocmd BufNewFile,BufRead *.test.js set filetype=javascript-jasmine syntax=javascript
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
 set langmenu=none                   " use english menu
 set hidden                          " don't unload buffer before switching
