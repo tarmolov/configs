@@ -30,7 +30,6 @@ let NERDTreeShowHidden = 1
 
 " Common
 syntax on
-
 filetype plugin on
 autocmd BufNewFile,BufRead *.test.js set filetype=javascript-jasmine syntax=javascript
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
@@ -44,6 +43,7 @@ set nobackup                        " don't make backup
 set noswapfile                      " and swap
 set nowb
 set confirm                         " provide confirm when you have unsaved changes
+set path=.,,**                      " for recursive search
 
 " Encoding
 set encoding=utf8
@@ -81,8 +81,6 @@ set background=dark
 highlight OverLengthLongLongStrings ctermbg=red ctermfg=white guibg=#592929
 match OverLengthLongLongStrings /\%101v.\+/
 
-
-
 " Command line
 set wildmenu                        " show autocompleate words
 set showmatch                       " show matched paranthes
@@ -110,9 +108,6 @@ set ignorecase                      " search withoug casesensitive
 set sessionoptions=curdir,buffers,folds,tabpages,winpos,winsize,resize,help
 set sessionoptions+=unix,slash      " comfortable movement files from unix to windows
 
-" CTRL-F для omni completion
-imap <C-F> <C-X><C-O>
-
 " < & > - shift for code blocks
 vmap < <gv
 vmap > >gv
@@ -132,6 +127,10 @@ map <leader>tn :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
+
+" Replace
+nnoremap <leader>s :%s//<left>
+vnoremap <leader>s :s//<left>
 
 " Marks browser
 map <leader>mb :MarksBrowser<cr>
