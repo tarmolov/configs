@@ -7,6 +7,7 @@ alias debrelease='if [ -e dupload.conf ]; then debrelease -c --nomail; else debr
 alias less='less -FRX'
 alias ducks="du -cks * | sort -rn | head -n11"
 alias vim='vim -p'
+alias e='vim'
 sdiff() {
     svn diff --no-diff-deleted $@ | colordiff | less -SR
 }
