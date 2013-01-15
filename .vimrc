@@ -27,6 +27,8 @@ Bundle 'mileszs/ack.vim'
 
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
+"set autochdir
+let g:NERDTreeChDirMode=2
 
 " Common
 syntax on
@@ -78,8 +80,9 @@ set number                          " enable row numeration
 let &sbr = nr2char(8618).' '        " show ↪ at the beginning of wrapped lines
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
-highlight OverLengthLongLongStrings ctermbg=red ctermfg=white guibg=#592929
-match OverLengthLongLongStrings /\%101v.\+/
+
+"highlight OverLengthLongLongStrings ctermbg=red ctermfg=white guibg=#592929
+"match OverLengthLongLongStrings /\%101v.\+/
 
 " Command line
 set wildmenu                        " show autocompleate words
