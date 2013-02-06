@@ -4,7 +4,7 @@ if [ $TERM = 'dumb' ]; then
 else
     FILE=~/.configs/.needupdate
 
-    if ! [ -f $FILE ] || test `find $FILE -mmin +540`;
+    if ! [ -f $FILE ] || test `find $FILE -mmin +3780`; # weekly
     then
         if ping -q -W 1 -c 1 ya.ru > /dev/null; then
             echo "== Updating configs"
