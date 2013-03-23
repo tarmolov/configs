@@ -16,15 +16,3 @@ deflog on
 
 # hard-status line
 hardstatus alwayslastline '%{= kW}%-w%{= kG}[%n %t]%{= kW}%+w%< %{= kW}%-=%d.%m.%Y %c:%s%{-}'
-
-chdir ~/www/libs
-screen -t libs 2
-
-chdir ~/www/http-services
-screen -t http-services 3
-
-chdir ~/.git-reps/mapscore
-screen -t mapscore 4
-
-chdir ~/www/maps
-screen -t maps 1
