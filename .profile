@@ -13,7 +13,7 @@ export ACK_PAGER='less -FRX'
 # Use local bin before
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d ~/bin ] ; then
-    PATH=~/bin:"${PATH}"
+    PATH=~/bin:/usr/local/share/npm/bin:"${PATH}"
 fi
 
 . ~/.configs/.bash/git-completion.bash
