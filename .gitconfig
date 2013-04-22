@@ -38,3 +38,5 @@
     keepBackup = false
 [advice]
     statushints = false
+[diff]
+    algorithm = patience
