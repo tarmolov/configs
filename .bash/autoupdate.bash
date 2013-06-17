@@ -6,12 +6,10 @@ else
 
     if ! [ -f $FILE ] || test `find $FILE -mmin +3780`; # weekly
     then
-        if ping -q -W 1 -c 1 ya.ru > /dev/null; then
-            echo "== Updating configs"
-            cd ~/.configs; git pull
-            git submodule update
-            touch $FILE
-            cd -
-        fi
+        echo "== Updating configs"
+        cd ~/.configs; git pull
+        git submodule update
+        touch $FILE
+        cd -
     fi
 fi
