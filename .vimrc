@@ -99,8 +99,9 @@ set statusline=%<%F\ %2*%y%m%r\
             \%3*-%{&fileencoding}-
 
 " Folding
-set foldlevelstart=99               "remove folds
-set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
+"set foldlevelstart=3               "remove folds
+"set foldmethod=syntax
+"set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 
 " Search
 set incsearch                       " search when typing
