@@ -24,6 +24,8 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'tarmolov/TabLineNumbers.vim'
 Bundle 'MediaWiki-folding-and-syntax-highlight'
 Bundle 'mileszs/ack.vim'
+Bundle 'ingydotnet/yaml-vim'
+Bundle 'editorconfig/editorconfig-vim'
 
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
@@ -35,6 +37,7 @@ syntax on
 filetype plugin on
 autocmd BufNewFile,BufRead *.test.js set filetype=javascript-jasmine syntax=javascript
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
+au BufNewFile,BufRead *.yaml,*.yml setf yaml
 set langmenu=none                   " use english menu
 set hidden                          " don't unload buffer before switching
 set autoread                        " autoread changing of file
