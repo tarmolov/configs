@@ -49,6 +49,7 @@ set noswapfile                      " and swap
 set nowb
 set confirm                         " provide confirm when you have unsaved changes
 set path=.,,**                      " for recursive search
+ca w!! w !sudo tee > /dev/null "%"  " sudo save
 
 " Encoding
 set encoding=utf8
