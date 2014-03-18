@@ -25,6 +25,7 @@ Bundle 'MediaWiki-folding-and-syntax-highlight'
 Bundle 'mileszs/ack.vim'
 Bundle 'ingydotnet/yaml-vim'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'wavded/vim-stylus.git'
 
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1

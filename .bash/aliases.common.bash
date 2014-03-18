@@ -1,5 +1,4 @@
 alias screen='screen -T linux -s /bin/bash'
-alias cmpf="complete -F"
 
 # svn
 alias surl='svn info | grep URL'

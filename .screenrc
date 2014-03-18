@@ -16,3 +16,6 @@ deflog on
 
 # hard-status line
 hardstatus alwayslastline '%{= kW}%-w%{= kG}[%n %t]%{= kW}%+w%< %{= kW}%-=%d.%m.%Y %c:%s%{-}'
+
+# enable mouse scroll
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
