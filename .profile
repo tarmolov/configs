@@ -10,6 +10,14 @@ export EDITOR=vim
 export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__git_ps1 " (%s)") \$\[\e[m\] \[\e[1;37m\]'
 export ACK_PAGER='less -FRX'
 
+# locale
+OS=$(uname)
+if [ $OS == "Linux" ]; then
+    export LC_ALL="en_US.utf8"
+else
+    export LC_ALL="en_US.UTF-8"
+fi
+
 # Use local bin before
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d ~/bin ] ; then
