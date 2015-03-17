@@ -30,7 +30,3 @@ fi
 . ~/.configs/.bash/aliases.git.bash
 . ~/.configs/.bash/autoscreen.bash
 . ~/.configs/.bash/z.sh
-
-if git --version 2>&1 >/dev/null; then
-    . ~/.configs/.bash/autoupdate.bash
-fi
