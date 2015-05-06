@@ -14,7 +14,6 @@ Bundle 'corntrace/bufexplorer'
 Bundle 'matchit.zip'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'Marks-Browser'
-Bundle 'JavaScript-syntax'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
@@ -26,6 +25,9 @@ Bundle 'mileszs/ack.vim'
 Bundle 'ingydotnet/yaml-vim'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'wavded/vim-stylus.git'
+Bundle 'mxw/vim-jsx'
+Bundle 'jelera/vim-javascript-syntax'
+
 
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
@@ -63,7 +65,7 @@ let mapleader = ","                 " remap <Leader> key
 set completeopt=longest,menuone     " autocompletion
 set autoindent                      " inherit indent from previous line
 "set smartindent
-set formatoptions-=o                "dont continue comments when pushing o/O
+set formatoptions-=o                " dont continue comments when pushing o/O
 set expandtab                       " convert tab to spaces
 set shiftwidth=4                    " size of tab char in spaces
 set softtabstop=4
@@ -81,7 +83,6 @@ set ruler                           " show cursor position
 set mousehide                       " hide mouser corse in typing
 set cursorline                      " highlight current position of cursor
 set number                          " enable row numeration
-let &sbr = nr2char(8618).' '        " show ↪ at the beginning of wrapped lines
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
 
@@ -106,6 +107,7 @@ set statusline=%<%F\ %2*%y%m%r\
 "set foldlevelstart=3               "remove folds
 "set foldmethod=syntax
 "set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
+set foldlevel=99
 
 " Search
 set incsearch                       " search when typing
