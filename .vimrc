@@ -27,6 +27,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'wavded/vim-stylus.git'
 Bundle 'mxw/vim-jsx'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'vim-scripts/LargeFile'
 
 
 let g:TabLineSet_windows = 0
