@@ -25,7 +25,7 @@
     safecrlf = true
     whitespace = space-before-tab,trailing-space
 [push]
-    default = tracking
+    default = upstream
 [gc]
     auto = 0
 [branch]
