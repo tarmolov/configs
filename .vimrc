@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
-
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -29,16 +28,14 @@ Bundle 'mxw/vim-jsx'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-scripts/LargeFile'
 
-
+" Bunles settings
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
-"set autochdir
 let g:NERDTreeChDirMode=2
 
 " Common
 syntax on
 filetype plugin on
-autocmd BufNewFile,BufRead *.test.js set filetype=javascript-jasmine syntax=javascript
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
 au BufNewFile,BufRead *.yaml,*.yml setf yaml
 set langmenu=none                   " use english menu
@@ -65,7 +62,6 @@ set iminsert=0                      " english as default keyboard layout
 let mapleader = ","                 " remap <Leader> key
 set completeopt=longest,menuone     " autocompletion
 set autoindent                      " inherit indent from previous line
-"set smartindent
 set formatoptions-=o                " dont continue comments when pushing o/O
 set expandtab                       " convert tab to spaces
 set shiftwidth=4                    " size of tab char in spaces
@@ -87,9 +83,6 @@ set number                          " enable row numeration
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
 
-"highlight OverLengthLongLongStrings ctermbg=red ctermfg=white guibg=#592929
-"match OverLengthLongLongStrings /\%101v.\+/
-
 " Command line
 set wildmenu                        " show autocompleate words
 set showmatch                       " show matched paranthes
@@ -105,9 +98,9 @@ set statusline=%<%F\ %2*%y%m%r\
             \%3*-%{&fileencoding}-
 
 " Folding
-"set foldlevelstart=3               "remove folds
-"set foldmethod=syntax
-"set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
+set foldlevelstart=3
+set foldmethod=syntax
+set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 set foldlevel=99
 
 " Search
