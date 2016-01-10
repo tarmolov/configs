@@ -7,6 +7,7 @@ Prerequisites
   * git (>=1.7.10)
   * vim (>=7.3)
   * screen
+  * [solarized colors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
 
 Features
 =========================
