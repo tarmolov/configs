@@ -1,3 +1,7 @@
+" Reload .vimrc withour restarting vim
+" :so %
+" :so $MYVIMRC
+
 set nocompatible
 filetype off
 
@@ -27,11 +31,13 @@ Bundle 'wavded/vim-stylus.git'
 Bundle 'mxw/vim-jsx'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-scripts/LargeFile'
+Bundle 'altercation/vim-colors-solarized'
 
 " Bunles settings
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
 let g:NERDTreeChDirMode=2
+let g:solarized_termtrans = 1
 
 " Common
 syntax on
@@ -82,6 +88,7 @@ set cursorline                      " highlight current position of cursor
 set number                          " enable row numeration
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
+colorscheme solarized
 
 " Command line
 set wildmenu                        " show autocompleate words
