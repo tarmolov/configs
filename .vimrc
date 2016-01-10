@@ -22,7 +22,6 @@ Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tarmolov/snipmate-snippets.vim'
 Bundle 'garbas/vim-snipmate'
-Bundle 'tarmolov/TabLineNumbers.vim'
 Bundle 'MediaWiki-folding-and-syntax-highlight'
 Bundle 'mileszs/ack.vim'
 Bundle 'ingydotnet/yaml-vim'
@@ -31,12 +30,14 @@ Bundle 'wavded/vim-stylus.git'
 Bundle 'mxw/vim-jsx'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-scripts/LargeFile'
+Bundle 'gcmt/taboo.vim'
 Bundle 'altercation/vim-colors-solarized'
 
 " Bunles settings
 let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
 let g:NERDTreeChDirMode=2
+let g:taboo_tab_format=' %N:%f%m '
 let g:solarized_termtrans = 1
 
 " Common
