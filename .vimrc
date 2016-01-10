@@ -38,7 +38,7 @@ let g:TabLineSet_windows = 0
 let NERDTreeShowHidden = 1
 let g:NERDTreeChDirMode=2
 let g:taboo_tab_format=' %N:%f%m '
-let g:solarized_termtrans = 1
+let g:solarized_termtrans = 1       " fix colors for solarized scheme
 
 " Common
 syntax on
