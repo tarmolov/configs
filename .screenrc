@@ -1,6 +1,5 @@
 defutf8 on                  # default encoding
 defflow on                  # mode of control window stream
-deflogin on                 # enable login mode
 vbell off                   # disable visual bell
 defmonitor on               # enable activity monitor
 activity "Activity on %n"   # activity message
