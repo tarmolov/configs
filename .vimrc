@@ -32,6 +32,8 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-scripts/LargeFile'
 Bundle 'gcmt/taboo.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'leafgarland/typescript-vim'
 
 " Bunles settings
 let NERDTreeShowHidden = 1          " show hidden files and directories
