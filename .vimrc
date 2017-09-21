@@ -40,6 +40,10 @@ let NERDTreeShowHidden = 1          " show hidden files and directories
 let g:NERDTreeChDirMode=2           " change working directory
 let g:taboo_tab_format=' %N:%f%m '  " taboo status line
 let g:solarized_termtrans = 1       " fix colors for solarized scheme
+set t_Co=256
+let g:solarized_termcolors=256
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " Common
 syntax on
