@@ -36,16 +36,6 @@ Bundle 'corntrace/bufexplorer'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
 
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
-
 " Bundles settings
 let NERDTreeShowHidden = 1          " show hidden files and directories
 let g:NERDTreeChDirMode=2           " change working directory
@@ -55,6 +45,16 @@ set t_Co=256
 let g:solarized_termcolors=256
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
 
 " Common
 syntax on
@@ -163,7 +163,7 @@ nnoremap <leader>s :%s//<left>
 vnoremap <leader>s :s//<left>
 
 " Marks browser
-map <leader>mb :MarksBrowser<cr>
+map <leader>m :MarksBrowser<cr>
 
 " Split navigation using arrows
 nnoremap <Right> <C-w>l
