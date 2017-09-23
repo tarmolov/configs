@@ -34,8 +34,21 @@ Bundle 'gcmt/taboo.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'Quramy/tsuquyomi'
+Bundle 'Quramy/vim-js-pretty-template'
+Bundle 'vim-syntastic/syntastic'
 
-" Bunles settings
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_aggregate_errors = 1
+
+" Bundles settings
 let NERDTreeShowHidden = 1          " show hidden files and directories
 let g:NERDTreeChDirMode=2           " change working directory
 let g:taboo_tab_format=' %N:%f%m '  " taboo status line
@@ -48,6 +61,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " Common
 syntax on
 filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
 au BufNewFile,BufRead *.yaml,*.yml setf yaml
 set langmenu=none                   " use english menu
@@ -71,7 +85,8 @@ set fileencodings=utf8,cp1251
 
 " Input
 set iminsert=0                      " english as default keyboard layout
-let mapleader = ","                 " remap <Leader> key
+let mapleader = "\<Space>"          " remap <Leader> key
+
 set completeopt=longest,menuone     " autocompletion
 set autoindent                      " inherit indent from previous line
 set formatoptions-=o                " dont continue comments when pushing o/O
@@ -165,3 +180,12 @@ noremap k gk
 " Acronyms
 ab fucntion function
 ab retrun return
+
+" Typescript
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:syntastic_typescript_tsc_fname = ''
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_completion_preview = 1
+let g:tsuquyomi_definition_split = 3 " open definition in new tab
+nnoremap <silent> <leader>h :echo tsuquyomi#hint()<CR>
