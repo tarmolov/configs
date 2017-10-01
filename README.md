@@ -13,7 +13,6 @@ Features
 =========================
   * Tuned `PS1` (command promt) looks like `<user>@<host> <working directory> (git branch) $`
   * Config for screen
-  * Automatic Screen for SSH Login
   * Git completion
   * Git flow completion
   * Git extra commands
@@ -23,7 +22,7 @@ Features
 
 Install
 =========================
-Clone my repository with configs and execute build.sh:
+Clone my repository with configs and execute `build.sh`:
 
     git clone git://github.com/tarmolov/configs.git ~/.configs
     ~/.configs/./build.sh --name='YOUR NAME' --email=EMAIL
