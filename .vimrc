@@ -21,6 +21,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/LargeFile'
 Bundle 'vim-syntastic/syntastic'
+Bundle 'ervandew/supertab'
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
@@ -45,6 +46,7 @@ set t_Co=256
 let g:solarized_termcolors=256
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 " Syntastic settings
 set statusline+=%#warningmsg#
