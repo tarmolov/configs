@@ -30,11 +30,9 @@ alias l.='ls -d .* --color=auto'
 
 # cd
 alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
-alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../'
 
 alias wget='wget -c' # resume by default
 alias df='df -H'
