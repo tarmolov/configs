@@ -32,10 +32,14 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'MediaWiki-folding-and-syntax-highlight'
 Bundle 'mxw/vim-jsx'
+Bundle 'fatih/vim-go'
 
 Bundle 'corntrace/bufexplorer'
 Bundle 'mileszs/ack.vim'
 Bundle 'terryma/vim-multiple-cursors'
+
+" Go
+let g:go_fmt_command = "goimports"
 
 " Bundles settings
 let NERDTreeShowHidden = 1          " show hidden files and directories
@@ -85,7 +89,7 @@ set fileencodings=utf8,cp1251
 
 " Input
 set iminsert=0                      " english as default keyboard layout
-let mapleader = "\<Space>"          " remap <Leader> key
+let mapleader = ","                 " remap <Leader> key
 
 set completeopt=longest,menuone     " autocompletion
 set autoindent                      " inherit indent from previous line
@@ -189,3 +193,9 @@ let g:tsuquyomi_completion_detail = 1
 let g:tsuquyomi_completion_preview = 1
 let g:tsuquyomi_definition_split = 3 " open definition in new tab
 nnoremap <silent> <leader>h :echo tsuquyomi#hint()<CR>
+
+" Go
+let g:loaded_syntastic_go_go_checker = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
