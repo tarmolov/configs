@@ -29,5 +29,6 @@ fi
 . ~/.configs/.bash/git-prompt.bash
 . ~/.configs/.bash/git-flow-completion.bash
 . ~/.configs/.bash/aliases.common.bash
+. ~/.configs/.bash/aliases.arc.bash
 . ~/.configs/.bash/aliases.git.bash
 . ~/.configs/.bash/z.sh
