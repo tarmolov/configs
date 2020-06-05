@@ -1,6 +1,6 @@
 alias as="arc st"
 alias ad="arc diff"
-alias adc="git diff --cached"
+alias adc="arc diff --cached"
 alias aa="arc add"
 alias ash="arc show"
 alias ac="arc commit -m"

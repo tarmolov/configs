@@ -16,11 +16,9 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Marks-Browser'
 Bundle 'matchit.zip'
-Bundle 'Quramy/tsuquyomi'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/LargeFile'
-Bundle 'vim-syntastic/syntastic'
 Bundle 'ervandew/supertab'
 
 Bundle 'altercation/vim-colors-solarized'
@@ -184,18 +182,3 @@ noremap k gk
 " Acronyms
 ab fucntion function
 ab retrun return
-
-" Typescript
-let g:syntastic_typescript_checkers = ['tsuquyomi']
-let g:syntastic_typescript_tsc_fname = ''
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_completion_detail = 1
-let g:tsuquyomi_completion_preview = 1
-let g:tsuquyomi_definition_split = 3 " open definition in new tab
-nnoremap <silent> <leader>h :echo tsuquyomi#hint()<CR>
-
-" Go
-let g:loaded_syntastic_go_go_checker = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
