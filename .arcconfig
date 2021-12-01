@@ -1,0 +1,52 @@
+[alias]
+    app = commit --amend -C HEAD
+    br = branch
+    ci = commit
+    co = checkout
+    di = diff
+    dic = diff --cached
+    sh = show -M -C -C
+    st = status -s
+    cp = cherry-pick
+    hist = log --format="{color.green}{commit}{color.reset}\t{color.cyan}{author:20}{color.reset}\t{title}"
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = red
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    untracked = cyan
+[svn]
+    rmdir = true
+[core]
+    safecrlf = true
+    whitespace = space-before-tab,trailing-space
+    excludesfile = ~/.gitignore
+[push]
+    default = upstream
+    followTags = true
+[pull]
+    rebase = true
+[gc]
+    auto = 0
+[branch]
+    autosetuprebase = always
+[merge]
+    tool = diffconflicts
+[mergetool "diffconflicts"]
+    cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+    trustExitCode = true
+    keepBackup = false
+[advice]
+    statushints = false
+[diff]
+    algorithm = patience
