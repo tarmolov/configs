@@ -128,7 +128,7 @@ set statusline=%<%F\ %2*%y%m%r\
             \%3*-%{&fileencoding}-
 
 " Folding
-set foldlevelstart=3
+set foldlevelstart=99
 set foldmethod=syntax
 set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
 set foldlevel=99
