@@ -1,7 +1,6 @@
 [include]
     path = .git-aliases/common
     path = .git-aliases/svn
-    path = .git-aliases/extra
     path = .git-aliases/yandex
 [color]
     diff = auto

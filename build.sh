@@ -58,8 +58,7 @@ done
 
 echo "Install vim plugins..."
 cd ~/.config/tarmolov
-git submodule init
-git submodule update
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sleep 1
 vim -c ":BundleInstall" -c ":qa"
 cd - >> /dev/null

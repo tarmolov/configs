@@ -5,36 +5,39 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Bundles
-Bundle 'gmarik/vundle'
-Bundle 'bkad/CamelCaseMotion'
-Bundle 'gcmt/taboo.vim'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'Marks-Browser'
-Bundle 'matchit.zip'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/LargeFile'
-Bundle 'ervandew/supertab'
+Plugin 'gmarik/vundle'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'gcmt/taboo.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'Marks-Browser'
+Plugin 'matchit.zip'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/LargeFile'
+Plugin 'ervandew/supertab'
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'ekalinin/Dockerfile.vim'
-Bundle 'ingydotnet/yaml-vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'MediaWiki-folding-and-syntax-highlight'
-Bundle 'mxw/vim-jsx'
-Bundle 'fatih/vim-go'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'ingydotnet/yaml-vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'MediaWiki-folding-and-syntax-highlight'
+Plugin 'mxw/vim-jsx'
+Plugin 'fatih/vim-go'
 
-Bundle 'corntrace/bufexplorer'
-Bundle 'mileszs/ack.vim'
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'corntrace/bufexplorer'
+Plugin 'mileszs/ack.vim'
+Plugin 'terryma/vim-multiple-cursors'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Go
 let g:go_fmt_command = "goimports"

@@ -15,7 +15,6 @@ Features
   * Config for screen
   * Git completion
   * Git flow completion
-  * Git extra commands
   * Git config with a lot of nice shortcuts
   * Vim config based on bundles
   * Works fine on unix and osx
