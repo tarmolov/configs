@@ -53,11 +53,11 @@ clean
 for file in .screenrc .vim .vimrc
 do
     echo "Set link to $file"
-    ln -sf ~/.configs/$file ~/$file
+    ln -sf ~/.config/tarmolov/$file ~/$file
 done
 
 echo "Install vim plugins..."
-cd ~/.configs
+cd ~/.config/tarmolov
 git submodule init
 git submodule update
 sleep 1
@@ -77,13 +77,13 @@ if [ -n "$NAME" ] &&  [ -n "$EMAIL" ]; then
     echo "  email = $EMAIL" >> ~/.gitconfig
 fi
 
-echo ". ~/.configs/.profile" >> ~/.profile
+echo ". ~/.config/tarmolov/.profile" >> ~/.profile
 echo "[include]" >> ~/.gitconfig
-echo "  path = .configs/.gitconfig" >> ~/.gitconfig
+echo "  path = .config/tarmolov/.gitconfig" >> ~/.gitconfig
 
 echo "Add useful commands"
 mkdir -p ~/bin
-ln -sf ~/.configs/.bin/diffconflicts ~/bin
+ln -sf ~/.config/tarmolov/.bin/diffconflicts ~/bin
 
 # screen doesn't read .profile
 ln -sf ~/.profile ~/.bashrc

@@ -4,14 +4,14 @@ if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
    . ~/.bashrc
 fi
 
-. ~/.configs/.bash/git-completion.bash
-. ~/.configs/.bash/git-prompt.bash
-. ~/.configs/.bash/git-flow-completion.bash
-. ~/.configs/.bash/aliases.common.bash
-. ~/.configs/.bash/aliases.arc.bash
-. ~/.configs/.bash/aliases.git.bash
-. ~/.configs/.bash/z.sh
-. ~/.configs/.bash/arc-prompt.bash
+. ~/.config/tarmolov/.bash/git-completion.bash
+. ~/.config/tarmolov/.bash/git-prompt.bash
+. ~/.config/tarmolov/.bash/git-flow-completion.bash
+. ~/.config/tarmolov/.bash/aliases.common.bash
+. ~/.config/tarmolov/.bash/aliases.arc.bash
+. ~/.config/tarmolov/.bash/aliases.git.bash
+. ~/.config/tarmolov/.bash/z.sh
+. ~/.config/tarmolov/.bash/arc-prompt.bash
 
 export TERM=linux
 export LESSCHARSET=utf-8

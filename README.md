@@ -24,8 +24,8 @@ Install
 =========================
 Clone my repository with configs and execute `build.sh`:
 
-    git clone git://github.com/tarmolov/configs.git ~/.configs
-    ~/.configs/./build.sh --name='YOUR NAME' --email=EMAIL
+    git clone git://github.com/tarmolov/configs.git ~/.config/tarmolov
+    ~/.config/tarmolov./build.sh --name='YOUR NAME' --email=EMAIL
 
 Enjoy! :)
 
