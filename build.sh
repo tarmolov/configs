@@ -27,6 +27,10 @@ for OPT in "$@" ; do
             case $OPT in
                --help)
                     show_usage;;
+                --clean)
+                    clean
+                    echo "Config files removed."
+                    exit 0 ;;
                 --name=*)
                     NAME=${OPT##*=}
                     shift ;;
