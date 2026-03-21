@@ -32,7 +32,7 @@ alias l.='ls -d .* --color=auto'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias .....='cd ../../../'
+alias .....='cd ../../../../'
 
 alias wget='wget -c' # resume by default
 alias df='df -H'
