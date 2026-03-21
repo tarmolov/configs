@@ -18,6 +18,7 @@ Plugin 'Marks-Browser'
 Plugin 'matchit.zip'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/LargeFile'
 Plugin 'ervandew/supertab'
 
