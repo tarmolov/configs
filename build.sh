@@ -91,7 +91,11 @@ fi
 
 echo "Install vim plugins..."
 cd ~/.config/tarmolov
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+    echo "Vundle already installed, skipping clone."
+fi
 sleep 1
 vim -c ":PluginInstall" -c ":qa"
 cd - >> /dev/null

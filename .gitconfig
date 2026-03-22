@@ -23,8 +23,10 @@
 [core]
     safecrlf = true
     whitespace = space-before-tab,trailing-space
+    excludesfile = ~/.gitignore
 [push]
     default = upstream
+    followTags = true
 [gc]
     auto = 0
 [branch]
@@ -41,9 +43,7 @@
     algorithm = patience
 [pull]
     rebase = true
-[push]
-    followTags = true
-[core]
-    excludesfile = ~/.gitignore
+[fetch]
+    prune = true
 [init]
     defaultBranch = main

@@ -1,4 +1,4 @@
-" Reload .vimrc withour restarting vim
+" Reload .vimrc without restarting vim
 " :so %
 " :so $MYVIMRC
 
