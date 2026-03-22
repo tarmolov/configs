@@ -35,7 +35,7 @@ Plugin 'fatih/vim-go'
 
 Plugin 'corntrace/bufexplorer'
 Plugin 'mileszs/ack.vim'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mg979/vim-visual-multi'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Config builder
 # Copyright 2012 Alexander Tarmolov <tarmolov@gmail.com>
@@ -12,13 +13,31 @@ show_usage() {
     exit
 }
 
+# check required dependencies
+check_deps() {
+    for cmd in git vim; do
+        if ! command -v "$cmd" > /dev/null 2>&1; then
+            echo "Error: '$cmd' is required but not installed."
+            exit 1
+        fi
+    done
+}
+
 # clean config files
 clean() {
-    for file in .bashrc .profile .gitconfig .screenrc .vimrc .vim
+    for file in .profile .gitconfig .screenrc .vimrc .vim
     do
         rm -rf ~/$file
     done
+    # .bashrc and .zshrc may contain user-specific data; only remove the sourcing line
+    for rcfile in .bashrc .zshrc; do
+        if [ -f ~/$rcfile ]; then
+            sed -i '/\.config\/tarmolov/d' ~/$rcfile
+        fi
+    done
 }
+
+check_deps
 
 # process command-line arguments
 for OPT in "$@" ; do
@@ -48,7 +67,7 @@ done
 echo "Config setup is started..."
 echo
 
-read -p "Config builder wants to delete .bashrc, .profile, .gitconfig, .screenrc, .vimrc and .vim. Do you want to continue? (y/n)? "
+read -p "Config builder wants to delete .profile, .gitconfig, .screenrc, .vimrc and .vim (and remove tarmolov lines from .bashrc/.zshrc). Do you want to continue? (y/n)? "
 [ "$REPLY" != "y" ] && exit
 
 echo "Clean old config files..."
@@ -59,6 +78,16 @@ do
     echo "Set link to $file"
     ln -sf ~/.config/tarmolov/$file ~/$file
 done
+
+echo "Set up .bashrc (wrapper sourcing tarmolov config)"
+if [ ! -f ~/.bashrc ] || ! grep -q 'tarmolov' ~/.bashrc; then
+    echo ". ~/.config/tarmolov/.bashrc" >> ~/.bashrc
+fi
+
+echo "Set up .zshrc (wrapper sourcing tarmolov config)"
+if [ ! -f ~/.zshrc ] || ! grep -q 'tarmolov' ~/.zshrc; then
+    echo ". ~/.config/tarmolov/.zshrc" >> ~/.zshrc
+fi
 
 echo "Install vim plugins..."
 cd ~/.config/tarmolov
@@ -87,9 +116,6 @@ echo "  path = .config/tarmolov/.gitconfig" >> ~/.gitconfig
 echo "Add useful commands"
 mkdir -p ~/bin
 ln -sf ~/.config/tarmolov/.bin/diffconflicts ~/bin
-
-# screen doesn't read .profile
-ln -sf ~/.profile ~/.bashrc
 
 echo
 echo "Config setup is finished..."

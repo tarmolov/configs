@@ -5,10 +5,13 @@
 . ~/.config/tarmolov/.bash/z.sh
 . ~/.config/tarmolov/.bash/arc-prompt.bash
 
+# Zsh completions
+autoload -Uz compinit && compinit
+
 setopt PROMPT_SUBST
 export PROMPT='%F{green}%n@%m%f %~%F{green}$(__git_ps1 " (%s)")%f $ '
 
-export TERM=linux
+export TERM=xterm-256color
 export LESSCHARSET=utf-8
 export EDITOR=vim
 export GIT_PS1_SHOWDIRTYSTATE=1
