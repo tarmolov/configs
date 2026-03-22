@@ -25,9 +25,15 @@ check_deps() {
 
 # clean config files
 clean() {
-    for file in .bashrc .zshrc .profile .gitconfig .screenrc .vimrc .vim
+    for file in .profile .gitconfig .screenrc .vimrc .vim
     do
         rm -rf ~/$file
+    done
+    # .bashrc and .zshrc may contain user-specific data; only remove the sourcing line
+    for rcfile in .bashrc .zshrc; do
+        if [ -f ~/$rcfile ]; then
+            sed -i '/\.config\/tarmolov/d' ~/$rcfile
+        fi
     done
 }
 
@@ -61,7 +67,7 @@ done
 echo "Config setup is started..."
 echo
 
-read -p "Config builder wants to delete .bashrc, .zshrc, .profile, .gitconfig, .screenrc, .vimrc and .vim. Do you want to continue? (y/n)? "
+read -p "Config builder wants to delete .profile, .gitconfig, .screenrc, .vimrc and .vim (and remove tarmolov lines from .bashrc/.zshrc). Do you want to continue? (y/n)? "
 [ "$REPLY" != "y" ] && exit
 
 echo "Clean old config files..."
@@ -73,11 +79,15 @@ do
     ln -sf ~/.config/tarmolov/$file ~/$file
 done
 
-echo "Set link to .bashrc"
-ln -sf ~/.config/tarmolov/.bashrc ~/.bashrc
+echo "Set up .bashrc (wrapper sourcing tarmolov config)"
+if [ ! -f ~/.bashrc ] || ! grep -q 'tarmolov' ~/.bashrc; then
+    echo ". ~/.config/tarmolov/.bashrc" >> ~/.bashrc
+fi
 
-echo "Set link to .zshrc"
-ln -sf ~/.config/tarmolov/.zshrc ~/.zshrc
+echo "Set up .zshrc (wrapper sourcing tarmolov config)"
+if [ ! -f ~/.zshrc ] || ! grep -q 'tarmolov' ~/.zshrc; then
+    echo ". ~/.config/tarmolov/.zshrc" >> ~/.zshrc
+fi
 
 echo "Install vim plugins..."
 cd ~/.config/tarmolov
