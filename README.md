@@ -8,6 +8,7 @@ Prerequisites
   * vim (>=7.3)
   * screen
   * bash or zsh
+  * colordiff (for colored diff output)
   * [solarized colors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) (optional, for terminal)
 
 Features
@@ -29,7 +30,8 @@ Clone the repository and execute `build.sh`:
     ~/.config/tarmolov/build.sh --name='YOUR NAME' --email=EMAIL
 
 The script will:
-- Create symlinks for `.bashrc`, `.zshrc`, `.vimrc`, `.screenrc`
+- Create symlinks for `.vimrc`, `.screenrc`
+- Append sourcing lines to `.bashrc` and `.zshrc`
 - Install Vim plugins via Vundle
 - Generate `.profile` and `.gitconfig` with your name/email
 
@@ -37,6 +39,6 @@ Enjoy! :)
 
 Credits
 =========================
-Thx to [@aefimov](https://twitter.com/#!/aefimov_box) (idea of building configs)
+Thx to [@aefimov](https://x.com/aefimov_box) (idea of building configs)
 
-Thx to [@bessarabov](https://twitter.com/#!/bessarabov) (idea of autoupdate configs)
+Thx to [@bessarabov](https://x.com/bessarabov) (idea of autoupdate configs)
