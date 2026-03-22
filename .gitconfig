@@ -39,3 +39,11 @@
     statushints = false
 [diff]
     algorithm = patience
+[pull]
+    rebase = true
+[push]
+    followTags = true
+[core]
+    excludesfile = ~/.gitignore
+[init]
+    defaultBranch = main

@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Config builder
 # Copyright 2012 Alexander Tarmolov <tarmolov@gmail.com>
@@ -12,13 +13,25 @@ show_usage() {
     exit
 }
 
+# check required dependencies
+check_deps() {
+    for cmd in git vim; do
+        if ! command -v "$cmd" > /dev/null 2>&1; then
+            echo "Error: '$cmd' is required but not installed."
+            exit 1
+        fi
+    done
+}
+
 # clean config files
 clean() {
-    for file in .bashrc .profile .gitconfig .screenrc .vimrc .vim
+    for file in .bashrc .zshrc .profile .gitconfig .screenrc .vimrc .vim
     do
         rm -rf ~/$file
     done
 }
+
+check_deps
 
 # process command-line arguments
 for OPT in "$@" ; do
@@ -48,7 +61,7 @@ done
 echo "Config setup is started..."
 echo
 
-read -p "Config builder wants to delete .bashrc, .profile, .gitconfig, .screenrc, .vimrc and .vim. Do you want to continue? (y/n)? "
+read -p "Config builder wants to delete .bashrc, .zshrc, .profile, .gitconfig, .screenrc, .vimrc and .vim. Do you want to continue? (y/n)? "
 [ "$REPLY" != "y" ] && exit
 
 echo "Clean old config files..."
@@ -59,6 +72,12 @@ do
     echo "Set link to $file"
     ln -sf ~/.config/tarmolov/$file ~/$file
 done
+
+echo "Set link to .bashrc"
+ln -sf ~/.config/tarmolov/.bashrc ~/.bashrc
+
+echo "Set link to .zshrc"
+ln -sf ~/.config/tarmolov/.zshrc ~/.zshrc
 
 echo "Install vim plugins..."
 cd ~/.config/tarmolov
@@ -87,9 +106,6 @@ echo "  path = .config/tarmolov/.gitconfig" >> ~/.gitconfig
 echo "Add useful commands"
 mkdir -p ~/bin
 ln -sf ~/.config/tarmolov/.bin/diffconflicts ~/bin
-
-# screen doesn't read .profile
-ln -sf ~/.profile ~/.bashrc
 
 echo
 echo "Config setup is finished..."

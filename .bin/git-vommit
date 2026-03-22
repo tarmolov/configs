@@ -4,7 +4,7 @@ import sys, os
 from urllib.request import urlopen
 
 def msg():
-    return urlopen('http://whatthecommit.com/index.txt').read().decode().strip()
+    return urlopen('https://whatthecommit.com/index.txt').read().decode().strip()
 
 if __name__ == '__main__':
     do_it = sys.stdout.write if '--wimp' in sys.argv else os.system

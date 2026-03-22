@@ -13,7 +13,7 @@ fi
 . ~/.config/tarmolov/.bash/z.sh
 . ~/.config/tarmolov/.bash/arc-prompt.bash
 
-export TERM=linux
+export TERM=xterm-256color
 export LESSCHARSET=utf-8
 export EDITOR=vim
 export GIT_PS1_SHOWDIRTYSTATE=1

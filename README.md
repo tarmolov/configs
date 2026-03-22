@@ -1,30 +1,37 @@
 Overview
 =========================
-There is my set of configs for bash, vim, screen and etc.
+There is my set of configs for bash, zsh, vim, screen and etc.
 
 Prerequisites
 =========================
-  * git (>=1.7.10)
+  * git (>=2.0)
   * vim (>=7.3)
   * screen
-  * [solarized colors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+  * bash or zsh
+  * [solarized colors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) (optional, for terminal)
 
 Features
 =========================
-  * Tuned `PS1` (command promt) looks like `<user>@<host> <working directory> (git branch) $`
+  * Tuned `PS1`/`PROMPT` looks like `<user>@<host> <working directory> (git branch) $`
   * Config for screen
-  * Git completion
+  * Git completion and aliases
   * Git flow completion
   * Git config with a lot of nice shortcuts
-  * Vim config based on bundles
-  * Works fine on unix and osx
+  * Vim config based on Vundle bundles
+  * Works fine on Linux and macOS
+  * Supports both bash and zsh
 
 Install
 =========================
-Clone my repository with configs and execute `build.sh`:
+Clone the repository and execute `build.sh`:
 
-    git clone git://github.com/tarmolov/configs.git ~/.config/tarmolov
-    ~/.config/tarmolov./build.sh --name='YOUR NAME' --email=EMAIL
+    git clone https://github.com/tarmolov/configs.git ~/.config/tarmolov
+    ~/.config/tarmolov/build.sh --name='YOUR NAME' --email=EMAIL
+
+The script will:
+- Create symlinks for `.bashrc`, `.zshrc`, `.vimrc`, `.screenrc`
+- Install Vim plugins via Vundle
+- Generate `.profile` and `.gitconfig` with your name/email
 
 Enjoy! :)
 
