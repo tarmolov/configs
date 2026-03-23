@@ -73,11 +73,16 @@ read -r -p "Config builder wants to delete .profile, .gitconfig, .screenrc, .vim
 echo "Clean old config files..."
 clean
 
-for file in .screenrc .vim .vimrc
+for file in .screenrc .vimrc
 do
     echo "Set link to $file"
     ln -sf ~/.config/tarmolov/$file ~/$file
 done
+# .vim is a directory; create it if needed and link bundle inside
+echo "Set link to .vim/bundle"
+mkdir -p ~/.config/tarmolov/.vim/bundle
+mkdir -p ~/.vim
+ln -sfn ~/.config/tarmolov/.vim/bundle ~/.vim/bundle
 
 echo "Set up .bashrc (wrapper sourcing tarmolov config)"
 if [ ! -f ~/.bashrc ] || ! grep -q 'tarmolov' ~/.bashrc; then
