@@ -39,7 +39,7 @@ clean() {
         elif [ -f ~/$rcfile ]; then
             # Regular file — safely strip the sourcing line
             tmpfile=$(mktemp)
-            grep -v '\.config/tarmolov' ~/$rcfile > "$tmpfile" || true
+            grep -v '\.config/tarmolov' ~/$rcfile > "$tmpfile" || true || true
             mv "$tmpfile" ~/$rcfile
         fi
     done
