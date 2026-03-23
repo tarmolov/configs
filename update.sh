@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-# Update dotfiles: pull latest changes and re-run setup
+# Update dotfiles: pull latest changes and update vim plugins
 set -e
+
+cd ~/.config/tarmolov
 
 echo "Pulling latest changes..."
 git pull
 
-echo "Re-running build.sh..."
-bash build.sh "$@"
+echo "Updating vim plugins..."
+vim -c ":PluginUpdate" -c ":qa"
 
 echo "Update complete."
