@@ -120,7 +120,7 @@ set cursorline                      " highlight current position of cursor
 set number                          " enable row numeration
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 
 " Command line
 set wildmenu                        " show autocompleate words

@@ -29,10 +29,18 @@ clean() {
     do
         rm -rf ~/$file
     done
-    # .bashrc and .zshrc may contain user-specific data; only remove the sourcing line
+    # .bashrc and .zshrc may contain user-specific data; only remove the sourcing line.
+    # IMPORTANT: if ~/.bashrc or ~/.zshrc is a symlink (e.g. from a previous install),
+    # do NOT edit it — that would corrupt the repo file it points to. Skip it.
     for rcfile in .bashrc .zshrc; do
-        if [ -f ~/$rcfile ]; then
-            sed -i.bak '/\.config\/tarmolov/d' ~/$rcfile && rm -f ~/$rcfile.bak
+        if [ -L ~/$rcfile ]; then
+            # It's a symlink — remove it entirely, a fresh one will be appended below
+            rm -f ~/$rcfile
+        elif [ -f ~/$rcfile ]; then
+            # Regular file — safely strip the sourcing line
+            tmpfile=$(mktemp)
+            grep -v '\.config/tarmolov' ~/$rcfile > "$tmpfile"
+            mv "$tmpfile" ~/$rcfile
         fi
     done
 }
