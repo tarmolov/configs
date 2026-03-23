@@ -1,3 +1,4 @@
+*.swp
 .secrets*
 .vim/bundle
 \[Vundle\] Installer
