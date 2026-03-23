@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 
 if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
    . ~/.bashrc
@@ -22,10 +22,12 @@ export ACK_PAGER='less -FRX'
 
 # locale
 OS=$(uname)
-if [ $OS == "Linux" ]; then
+if [ "$OS" = "Linux" ]; then
     export LC_ALL="en_US.utf8"
 else
     export LC_ALL="en_US.UTF-8"
+    # Apple Silicon Homebrew
+    [ -d /opt/homebrew/bin ] && export PATH="/opt/homebrew/bin:$PATH"
 fi
 
 # Use local bin before
@@ -33,3 +35,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d ~/bin ] ; then
     PATH=~/bin:/usr/local/share/npm/bin:"${PATH}"
 fi
+
+# Load local overrides if present
+[ -f ~/.bash/local.bash ] && source ~/.bash/local.bash

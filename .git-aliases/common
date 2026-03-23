@@ -11,10 +11,10 @@
     st = status -s
     cp = cherry-pick
     hist = log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph --date=short
-    lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
-    in = !"git remote update -p &> /dev/null; git hist ..@{u}"
+    lost = !"git fsck | awk '/dangling commit/ {print $3}' | xargs git show --format='SHA1: %C(yellow)%h%Creset %f' | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+    in = !"git remote update -p > /dev/null 2>&1; git hist ..@{u}"
     out = !"git hist @{u}.."
     ppush = !"git sh @{u}.."
-    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+    snapshot = !git stash push -m "snapshot: $(date)" && git stash apply "stash@{0}"
     ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"

@@ -17,6 +17,5 @@ alias gcob="git checkout -b"
 alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias glg="git lg"
-alias gh="git hist"
+alias ghist="git hist"
 alias gr='cd "`git rev-parse --show-toplevel`"'
-alias gv="git vommit"
