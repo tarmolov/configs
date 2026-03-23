@@ -93,14 +93,10 @@ mkdir -p ~/.vim
 ln -sfn ~/.config/tarmolov/.vim/bundle ~/.vim/bundle
 
 echo "Set up .bashrc (wrapper sourcing tarmolov config)"
-if [ ! -f ~/.bashrc ] || ! grep -q 'tarmolov' ~/.bashrc; then
-    echo ". ~/.config/tarmolov/.bashrc" >> ~/.bashrc
-fi
+grep -qF ". ~/.config/tarmolov/.bashrc" ~/.bashrc 2>/dev/null || echo ". ~/.config/tarmolov/.bashrc" >> ~/.bashrc
 
 echo "Set up .zshrc (wrapper sourcing tarmolov config)"
-if [ ! -f ~/.zshrc ] || ! grep -q 'tarmolov' ~/.zshrc; then
-    echo ". ~/.config/tarmolov/.zshrc" >> ~/.zshrc
-fi
+grep -qF ". ~/.config/tarmolov/.zshrc" ~/.zshrc 2>/dev/null || echo ". ~/.config/tarmolov/.zshrc" >> ~/.zshrc
 
 echo "Install vim plugins..."
 cd ~/.config/tarmolov
