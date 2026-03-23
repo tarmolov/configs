@@ -116,14 +116,14 @@ if [ -n "$NAME" ] && [ -n "$EMAIL" ]; then
     grep -qF "DEBFULLNAME" ~/.profile 2>/dev/null || echo "export DEBFULLNAME=\"$NAME\"" >> ~/.profile
     grep -qF "DEBEMAIL" ~/.profile 2>/dev/null || echo "export DEBEMAIL=$EMAIL" >> ~/.profile
     grep -qF "export EMAIL" ~/.profile 2>/dev/null || echo "export EMAIL=$EMAIL" >> ~/.profile
+    git config --global user.name "$NAME"
+    git config --global user.email "$EMAIL"
 fi
 
 grep -qF ".config/tarmolov/.profile" ~/.profile 2>/dev/null || echo ". ~/.config/tarmolov/.profile" >> ~/.profile
 grep -qF ".config/tarmolov/.gitconfig" ~/.gitconfig 2>/dev/null || {
     echo "[include]" >> ~/.gitconfig
     echo "  path = .config/tarmolov/.gitconfig" >> ~/.gitconfig
-    git config --global user.name "$NAME"
-    git config --global user.email "$EMAIL"
 }
 
 echo "Add useful commands"
