@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -e
 
 # Config builder
@@ -32,7 +32,7 @@ clean() {
     # .bashrc and .zshrc may contain user-specific data; only remove the sourcing line
     for rcfile in .bashrc .zshrc; do
         if [ -f ~/$rcfile ]; then
-            sed -i '/\.config\/tarmolov/d' ~/$rcfile
+            sed -i.bak '/\.config\/tarmolov/d' ~/$rcfile && rm -f ~/$rcfile.bak
         fi
     done
 }
@@ -52,10 +52,10 @@ for OPT in "$@" ; do
                     exit 0 ;;
                 --name=*)
                     NAME=${OPT##*=}
-                    shift ;;
+                    ;;
                 --email=*)
                     EMAIL=${OPT##*=}
-                    shift ;;
+                    ;;
                 -*)
                     echo "Illegal option"
                 ;;
@@ -67,7 +67,7 @@ done
 echo "Config setup is started..."
 echo
 
-read -p "Config builder wants to delete .profile, .gitconfig, .screenrc, .vimrc and .vim (and remove tarmolov lines from .bashrc/.zshrc). Do you want to continue? (y/n)? "
+read -r -p "Config builder wants to delete .profile, .gitconfig, .screenrc, .vimrc and .vim (and remove tarmolov lines from .bashrc/.zshrc). Do you want to continue? (y/n)? " REPLY
 [ "$REPLY" != "y" ] && exit
 
 echo "Clean old config files..."
@@ -98,28 +98,35 @@ else
 fi
 sleep 1
 vim -c ":PluginInstall" -c ":qa"
-cd - >> /dev/null
+cd - > /dev/null 2>&1
 
 echo "Generate .profile and .gitconfig"
 
 # generate .profile if name and e-mail are set
-if [ -n "$NAME" ] &&  [ -n "$EMAIL" ]; then
-    echo "export DEBFULLNAME=\"$NAME\"" >> ~/.profile
-    echo "export DEBEMAIL=$EMAIL" >> ~/.profile
-    echo "export EMAIL=$EMAIL" >> ~/.profile
+if [ -n "$NAME" ] && [ -n "$EMAIL" ]; then
+    grep -qF "DEBFULLNAME" ~/.profile 2>/dev/null || echo "export DEBFULLNAME=\"$NAME\"" >> ~/.profile
+    grep -qF "DEBEMAIL" ~/.profile 2>/dev/null || echo "export DEBEMAIL=$EMAIL" >> ~/.profile
+    grep -qF "export EMAIL" ~/.profile 2>/dev/null || echo "export EMAIL=$EMAIL" >> ~/.profile
 
-    echo "[user]" >> ~/.gitconfig
-    echo "  name = $NAME" >> ~/.gitconfig
-    echo "  email = $EMAIL" >> ~/.gitconfig
+    grep -qF "[user]" ~/.gitconfig 2>/dev/null || {
+        echo "[user]" >> ~/.gitconfig
+        echo "  name = $NAME" >> ~/.gitconfig
+        echo "  email = $EMAIL" >> ~/.gitconfig
+    }
 fi
 
-echo ". ~/.config/tarmolov/.profile" >> ~/.profile
-echo "[include]" >> ~/.gitconfig
-echo "  path = .config/tarmolov/.gitconfig" >> ~/.gitconfig
+grep -qF ".config/tarmolov/.profile" ~/.profile 2>/dev/null || echo ". ~/.config/tarmolov/.profile" >> ~/.profile
+grep -qF ".config/tarmolov/.gitconfig" ~/.gitconfig 2>/dev/null || {
+    echo "[include]" >> ~/.gitconfig
+    echo "  path = .config/tarmolov/.gitconfig" >> ~/.gitconfig
+}
 
 echo "Add useful commands"
 mkdir -p ~/bin
+mkdir -p ~/.screen-logs
 ln -sf ~/.config/tarmolov/.bin/diffconflicts ~/bin
+# Remove git-vommit if present (deleted from repo)
+rm -f ~/bin/git-vommit
 
 echo
 echo "Config setup is finished..."

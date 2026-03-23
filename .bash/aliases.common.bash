@@ -17,7 +17,7 @@ alias debrelease='if [ -e dupload.conf ]; then debrelease -c --nomail; else debr
 # editor
 alias vi=vim
 alias vim='vim -p'
-alias svim='sudo vim'
+alias svim='sudoedit'
 alias e='vim'
 
 # grep
@@ -26,7 +26,7 @@ alias less='less -FRX'
 
 # ls
 alias ll='ls -la'
-alias l.='ls -d .* --color=auto'
+alias l.='ls -d .*'
 
 # cd
 alias ..='cd ..'

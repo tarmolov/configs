@@ -11,7 +11,7 @@ shell -$SHELL               # always use a login shell
 
 # auto-log
 logfile $HOME/.screen-logs/%Y%m%d-%n.log
-deflog on
+deflog off  # WARNING: deflog on captures all terminal output incl. passwords; disabled for safety
 
 # hard-status line
 hardstatus alwayslastline '%{= kW}%-w%{= kG}[%n %t]%{= kW}%+w%< %{= kW}%-=%d.%m.%Y %c:%s%{-}'

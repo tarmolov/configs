@@ -1,3 +1,21 @@
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_DUPS
+
+# Locale
+if [[ $(uname) == "Linux" ]]; then
+    export LC_ALL="en_US.utf8"
+else
+    export LC_ALL="en_US.UTF-8"
+    # Apple Silicon Homebrew
+    [ -d /opt/homebrew/bin ] && export PATH="/opt/homebrew/bin:$PATH"
+fi
+
+# Bash compatibility (needed for complete -F and similar)
+autoload -Uz bashcompinit && bashcompinit
+
 . ~/.config/tarmolov/.bash/git-prompt.bash
 . ~/.config/tarmolov/.bash/aliases.common.bash
 . ~/.config/tarmolov/.bash/aliases.arc.bash
@@ -22,3 +40,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 if [ -d ~/bin ] ; then
     PATH=~/bin:/usr/local/share/npm/bin:"${PATH}"
 fi
+
+# Load local overrides if present
+[ -f ~/.zsh/local.zsh ] && source ~/.zsh/local.zsh
