@@ -18,4 +18,4 @@ alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias glg="git lg"
 alias ghist="git hist"
-alias gr='cd "`git rev-parse --show-toplevel`"'
+alias gr='cd "$(git rev-parse --show-toplevel)"'

@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then
-   . ~/.bashrc
-fi
-
 . ~/.config/tarmolov/.bash/git-completion.bash
 . ~/.config/tarmolov/.bash/git-prompt.bash
 . ~/.config/tarmolov/.bash/git-flow-completion.bash

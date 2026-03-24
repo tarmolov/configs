@@ -3,7 +3,7 @@ alias bc='bc -l' # start calculator with math support
 alias cmpf="complete -F"
 alias screen='screen -T linux -s /bin/bash'
 alias mkdir='mkdir -pv' # create parent directories on demand
-alias diff='colordiff'
+command -v colordiff &>/dev/null && alias diff='colordiff'
 alias path='echo -e ${PATH//:/\\n}'
 
 # svn
@@ -11,8 +11,8 @@ alias surl='svn info | grep URL'
 alias svst='svn st --ignore-externals | grep -v ^X'
 
 # debian
-alias dch='dch --distributor debian'
-alias debrelease='if [ -e dupload.conf ]; then debrelease -c --nomail; else debrelease --nomail; fi'
+command -v dch &>/dev/null && alias dch='dch --distributor debian'
+command -v debrelease &>/dev/null && alias debrelease='if [ -e dupload.conf ]; then debrelease -c --nomail; else debrelease --nomail; fi'
 
 # editor
 alias vi=vim
@@ -39,8 +39,8 @@ alias df='df -H'
 alias du='du -ch'
 alias ducks="du -cks * | sort -rn | head -n11"
 
-sdiff() {
-    svn diff --no-diff-deleted $@ | colordiff | less -SR
+svndiff() {
+    svn diff --no-diff-deleted "$@" | colordiff | less -SR
 }
 
 # Set appropriate ls alias

@@ -25,10 +25,10 @@
     whitespace = space-before-tab,trailing-space
     excludesfile = ~/.gitignore
 [push]
-    default = upstream
+    default = simple
     followTags = true
 [gc]
-    auto = 0
+    auto = 500
 [branch]
     autosetuprebase = always
 [merge]
