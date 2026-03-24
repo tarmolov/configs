@@ -3,64 +3,54 @@
 " :so $MYVIMRC
 
 set nocompatible
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Install vim-plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-" Bundles
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'gcmt/taboo.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'Marks-Browser'
-Plugin 'matchit.zip'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/LargeFile'
-Plugin 'ervandew/supertab'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'ingydotnet/yaml-vim'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'MediaWiki-folding-and-syntax-highlight'
-Plugin 'mxw/vim-jsx'
-Plugin 'fatih/vim-go'
+" Plugins
+Plug 'bkad/CamelCaseMotion'
+Plug 'gcmt/taboo.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'ervandew/supertab'
 
-Plugin 'corntrace/bufexplorer'
-Plugin 'mileszs/ack.vim'
-Plugin 'mg979/vim-visual-multi'
+Plug 'lifepillar/vim-solarized8'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'ingydotnet/yaml-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'dense-analysis/ale'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'mileszs/ack.vim'
+Plug 'mg979/vim-visual-multi'
+
+call plug#end()
+
+filetype plugin indent on
+packadd! matchit
 
 " Go
 let g:go_fmt_command = "goimports"
 
-" Bundles settings
+" Plugin settings
 let NERDTreeShowHidden = 1          " show hidden files and directories
 let g:NERDTreeChDirMode=2           " change working directory
 let g:taboo_tab_format=' %N:%f%m '  " taboo status line
-let g:solarized_termtrans = 1       " fix colors for solarized scheme
-set t_Co=256
-let g:solarized_termcolors=256
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
+" ALE settings
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠"
+let g:ale_fix_on_save = 0
 
 " Common
 syntax on
@@ -120,7 +110,7 @@ set cursorline                      " highlight current position of cursor
 set number                          " enable row numeration
 set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
-silent! colorscheme solarized
+silent! colorscheme solarized8
 
 " Command line
 set wildmenu                        " show autocompleate words
@@ -176,9 +166,6 @@ map <leader>tm :tabmove
 " Replace
 nnoremap <leader>s :%s//<left>
 vnoremap <leader>s :s//<left>
-
-" Marks browser
-map <leader>m :MarksBrowser<cr>
 
 " Split navigation using arrows
 nnoremap <Right> <C-w>l
