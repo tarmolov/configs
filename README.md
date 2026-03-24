@@ -1,44 +1,42 @@
-Overview
-=========================
-There is my set of configs for bash, zsh, vim, screen and etc.
+# dotfiles
 
-Prerequisites
-=========================
-  * git (>=2.0)
-  * vim (>=7.3)
-  * screen
-  * bash or zsh
-  * colordiff (for colored diff output)
-  * [solarized colors](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) (optional, for terminal)
+Personal configs for vim, git, bash/zsh, and screen.
 
-Features
-=========================
-  * Tuned `PS1`/`PROMPT` looks like `<user>@<host> <working directory> (git branch) $`
-  * Config for screen
-  * Git completion and aliases
-  * Git flow completion
-  * Git config with a lot of nice shortcuts
-  * Vim config based on Vundle bundles
-  * Works fine on Linux and macOS
-  * Supports both bash and zsh
+## Prerequisites
 
-Install
-=========================
-Clone the repository and execute `build.sh`:
+- `git` ≥ 2.0
+- `vim` ≥ 8.0
+- `bash` or `zsh`
+- `screen`
+- `colordiff` — for colored diff output
+- [Solarized for iTerm2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) _(optional)_
 
-    git clone https://github.com/tarmolov/configs.git ~/.config/tarmolov
-    ~/.config/tarmolov/build.sh --name='YOUR NAME' --email=EMAIL
+## Install
 
-The script will:
-- Create symlinks for `.vimrc`, `.screenrc`
-- Append sourcing lines to `.bashrc` and `.zshrc`
-- Install Vim plugins via Vundle
-- Generate `.profile` and `.gitconfig` with your name/email
+```bash
+git clone https://github.com/tarmolov/configs.git ~/.config/tarmolov
+~/.config/tarmolov/build.sh --name='Your Name' --email=you@example.com
+```
 
-Enjoy! :)
+The script creates symlinks for `.vimrc` and `.screenrc`, appends sourcing lines to `.bashrc`/`.zshrc`, generates `.gitconfig` and `.profile`, and installs vim plugins via [vim-plug](https://github.com/junegunn/vim-plug).
 
-Credits
-=========================
-Thx to [@aefimov](https://x.com/aefimov_box) (idea of building configs)
+Then open vim and run `:PlugInstall`.
 
-Thx to [@bessarabov](https://x.com/bessarabov) (idea of autoupdate configs)
+## Update
+
+```bash
+~/.config/tarmolov/update.sh
+```
+
+## What's inside
+
+**Vim** — vim-plug, async linting with [ALE](https://github.com/dense-analysis/ale), NERDTree, vim-go, polyglot syntax, solarized8 colorscheme
+
+**Git** — aliases, shortcuts, completion, git-flow completion
+
+**Shell** — tuned `PS1`/`PROMPT` with git branch, common aliases, works on Linux and macOS
+
+## Credits
+
+[@aefimov](https://x.com/aefimov_box) — idea of building configs  
+[@bessarabov](https://x.com/bessarabov) — idea of autoupdate configs
