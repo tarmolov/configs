@@ -16,12 +16,11 @@ command -v debrelease &>/dev/null && alias debrelease='if [ -e dupload.conf ]; t
 
 # editor
 alias vi=vim
-alias vim='vim -p'
 alias svim='sudoedit'
 alias e='vim'
 
 # grep
-alias rgrep='grep -r --exclude=.git --exclude=\*.svn\*'
+alias rgrep='grep -r --exclude-dir=.git --exclude-dir=.svn --exclude-dir=node_modules --exclude-dir=__pycache__ --exclude-dir=dist --exclude-dir=build'
 alias less='less -FRX'
 
 # ls

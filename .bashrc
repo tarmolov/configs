@@ -9,28 +9,9 @@
 . ~/.config/tarmolov/.bash/z.sh
 . ~/.config/tarmolov/.bash/arc-prompt.bash
 
-export TERM=xterm-256color
-export LESSCHARSET=utf-8
-export EDITOR=vim
-export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]$(__arc_ps1)$(__git_ps1 " (%s)") \$\[\e[m\] \[\e[1;37m\]'
-export ACK_PAGER='less -FRX'
 
-# locale
-OS=$(uname)
-if [ "$OS" = "Linux" ]; then
-    export LC_ALL="en_US.utf8"
-else
-    export LC_ALL="en_US.UTF-8"
-    # Apple Silicon Homebrew
-    [ -d /opt/homebrew/bin ] && export PATH="/opt/homebrew/bin:$PATH"
-fi
-
-# Use local bin before
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-if [ -d ~/bin ] ; then
-    PATH=~/bin:/usr/local/share/npm/bin:"${PATH}"
-fi
+. ~/.config/tarmolov/.bash/env.bash
 
 # Load local overrides if present
 [ -f ~/.bash/local.bash ] && source ~/.bash/local.bash
