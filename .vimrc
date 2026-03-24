@@ -21,9 +21,6 @@ Plug 'ervandew/supertab'
 
 Plug 'lifepillar/vim-solarized8'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'ingydotnet/yaml-vim'
-Plug 'leafgarland/typescript-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
@@ -70,6 +67,11 @@ else
 endif
 set history=150                     " size of history
 set undolevels=1000                 " max count of undo commands
+if has('persistent_undo')
+    let &undodir = expand('~/.vim/undodir')
+    silent! call mkdir(&undodir, 'p')
+    set undofile
+endif
 set nobackup                        " don't make backup
 set nowb
 " NOTE: swapfile is enabled for crash recovery (noswapfile removed)
@@ -102,11 +104,9 @@ augroup MyVimrc
   autocmd QuickFixCmdPost    l* nested lwindow
   autocmd BufNewFile,BufRead *.wiki set filetype=wiki syntax=wp
   au BufNewFile,BufRead *.yaml,*.yml setf yaml
-  " Delete spaces from end of lines (skip markdown and diff to preserve two-space line breaks)
-  autocmd BufWritePre * if &filetype !~# 'markdown\|diff' | :%s/\s\+$//e | endif
-  autocmd BufWritePre * silent! :%s#\($\n\s*\)\+\%$## " Delete trailing lines at the end of file
   autocmd FocusLost * silent! wa      " Auto save files when focus is lost
-  autocmd BufLeave * silent! :w       "   or leave buffer
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+      \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
 augroup END
 set pastetoggle=<Leader>p           " Invert paste mod
 

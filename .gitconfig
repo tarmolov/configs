@@ -40,7 +40,10 @@
 [advice]
     statushints = false
 [diff]
-    algorithm = patience
+    algorithm = histogram
+[rerere]
+    enabled = true
+    autoupdate = true
 [pull]
     rebase = true
 [fetch]
