@@ -87,27 +87,14 @@ do
     ln -sf ~/.config/tarmolov/$file ~/$file
 done
 # .vim is a directory; create it if needed and link bundle inside
-echo "Set link to .vim/bundle"
-mkdir -p ~/.config/tarmolov/.vim/bundle
-mkdir -p ~/.vim
-ln -sfn ~/.config/tarmolov/.vim/bundle ~/.vim/bundle
-
 echo "Set up .bashrc (wrapper sourcing tarmolov config)"
 grep -qF ". ~/.config/tarmolov/.bashrc" ~/.bashrc 2>/dev/null || echo ". ~/.config/tarmolov/.bashrc" >> ~/.bashrc
 
 echo "Set up .zshrc (wrapper sourcing tarmolov config)"
 grep -qF ". ~/.config/tarmolov/.zshrc" ~/.zshrc 2>/dev/null || echo ". ~/.config/tarmolov/.zshrc" >> ~/.zshrc
 
-echo "Install vim plugins..."
-cd ~/.config/tarmolov
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-else
-    echo "Vundle already installed, skipping clone."
-fi
-sleep 1
-vim -c ":PluginInstall" -c ":qa"
-cd - > /dev/null 2>&1
+echo "Installing vim plugins..."
+vim -c ":PlugInstall" -c ":qa"
 
 echo "Generate .profile and .gitconfig"
 

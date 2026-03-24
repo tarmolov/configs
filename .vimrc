@@ -50,17 +50,24 @@ let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 " ALE settings
 let g:ale_sign_error = "✗"
 let g:ale_sign_warning = "⚠"
-let g:ale_fix_on_save = 0
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+let g:ale_fix_on_save = 1
 
 " Common
 syntax on
-filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 set langmenu=none                   " use english menu
 set hidden                          " don't unload buffer before switching
 set autoread                        " autoread changing of file
-set spelllang=ru_ru,en_us           " spellchecker for english and russian
+" spellchecker — Russian only if spell file is available
+if filereadable(globpath(&rtp, 'spell/ru.utf-8.spl', 1))
+    set spelllang=ru,en_us
+else
+    set spelllang=en_us
+endif
 set history=150                     " size of history
 set undolevels=1000                 " max count of undo commands
 set nobackup                        " don't make backup
@@ -112,6 +119,11 @@ set list listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
 set background=dark
 silent! colorscheme solarized8
 
+" Define statusline highlight groups
+hi User1 ctermfg=white  ctermbg=238 guifg=#ffffff guibg=#444444
+hi User2 ctermfg=yellow ctermbg=238 guifg=#ffff00 guibg=#444444
+hi User3 ctermfg=cyan   ctermbg=238 guifg=#00ffff guibg=#444444
+
 " Command line
 set wildmenu                        " show autocompleate words
 set showmatch                       " show matched paranthes
@@ -146,13 +158,8 @@ set sessionoptions+=unix,slash      " comfortable movement files from unix to wi
 vmap < <gv
 vmap > >gv
 
-" remap for CamelCaseMotion
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
+" CamelCaseMotion via leader prefix (preserves dw/cw/yw operator-pending)
+let g:camelcasemotion_key = '<leader>'
 
 " gf opens file in new tab
 map <silent> gf <C-W>gf:tabm 999<cr>

@@ -8,6 +8,6 @@ echo "Pulling latest changes..."
 git pull
 
 echo "Updating vim plugins..."
-vim -c ":PluginUpdate" -c ":qa"
+vim -c ":PlugUpdate" -c ":qa"
 
 echo "Update complete."
